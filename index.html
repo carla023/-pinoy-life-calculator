@@ -15,7 +15,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 .calcbtn{width:100%;background:#00A898;color:white}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
 .result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
-#salary,#bir{display:none;text-align:left}
+#salary,#bir,#sss{display:none;text-align:left}
 </style>
 </head>
 
@@ -39,7 +39,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 <span class="icon">🧾</span>BIR Tax
 </button>
 
-<button onclick="alert('SSS Calculator coming soon!')">
+<button onclick="openPage('sss')">
 <span class="icon">🏦</span>SSS Calculator
 </button>
 
@@ -88,24 +88,41 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 </main>
 
+<main id="sss">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2>🏦 SSS Calculator</h2>
+
+<label>Monthly Salary</label>
+<input id="sssInput" type="number" placeholder="Example: 20000">
+
+<button class="calcbtn" onclick="sssCalc()">Calculate</button>
+
+<div id="sssResult" class="result" style="display:none"></div>
+
+</main>
+
 <script>
 
 function openPage(page){
 document.getElementById("home").style.display="none";
 document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
+document.getElementById("sss").style.display="none";
 document.getElementById(page).style.display="block";
 }
 
 function home(){
 document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
+document.getElementById("sss").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
-function sss(s){
+function sssAmount(s){
 let m=Math.max(5000,Math.min(35000,Math.ceil(s/500)*500));
-return m*.05;
+return m*0.05;
 }
 
 function salaryCalc(){
@@ -114,13 +131,18 @@ let s=Number(document.getElementById("salaryInput").value);
 
 if(s<=0){alert("Enter your salary.");return}
 
-let a=sss(s);
+let a=sssAmount(s);
 let p=s*.025;
 let pg=Math.min(s*.02,100);
 let taxable=Math.max(0,s-a-p-pg);
 let tax=0;
 
-if(taxable>20833)tax=(taxable-20833)*.15;
+if(taxable<=20833)tax=0;
+else if(taxable<=33333)tax=(taxable-20833)*.15;
+else if(taxable<=66667)tax=1875+(taxable-33333)*.20;
+else if(taxable<=166667)tax=8541.80+(taxable-66667)*.25;
+else if(taxable<=666667)tax=33541.80+(taxable-166667)*.30;
+else tax=183541.80+(taxable-666667)*.35;
 
 let total=a+p+pg+tax;
 let net=s-total;
@@ -158,6 +180,25 @@ document.getElementById("birResult").innerHTML=
 "<b>Estimated Monthly BIR Tax</b><br><br>"+
 "Taxable Income: ₱"+income.toFixed(2)+"<br><br>"+
 "<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>";
+}
+
+function sssCalc(){
+
+let s=Number(document.getElementById("sssInput").value);
+
+if(s<=0){alert("Enter your salary.");return}
+
+let m=Math.max(5000,Math.min(35000,Math.ceil(s/500)*500));
+let employee=m*.05;
+
+document.getElementById("sssResult").style.display="block";
+
+document.getElementById("sssResult").innerHTML=
+"<b>Estimated SSS Contribution</b><br><br>"+
+"Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
+"Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
+"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
+"Note: Estimated amount only.";
 }
 
 </script>
