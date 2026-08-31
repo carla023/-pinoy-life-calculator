@@ -1,5 +1,5 @@
-DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pinoy Life Calculator</title>
@@ -259,6 +259,12 @@ color:#90a4ae;
 padding:25px 10px
 }
 
+.footer a{
+color:#008f82;
+text-decoration:none;
+font-weight:bold
+}
+
 #salary,#bir,#sss,#pagibig,#budget,#savings{
 display:none
 }
@@ -277,7 +283,6 @@ display:none
 
 </header>
 
-
 <main id="home">
 
 <div class="home-title">
@@ -287,7 +292,6 @@ display:none
 <p>Plan your money smarter, one calculation at a time.</p>
 
 </div>
-
 
 <div class="grid">
 
@@ -329,7 +333,6 @@ Savings Goal
 
 </div>
 
-
 <div class="dashboard">
 
 <h3>📈 Savings Dashboard</h3>
@@ -352,7 +355,6 @@ Savings Goal
 
 </div>
 
-
 <div class="history">
 
 <h3>📋 Recent Calculations</h3>
@@ -364,7 +366,6 @@ Savings Goal
 </button>
 
 </div>
-
 
 <div class="about">
 
@@ -386,13 +387,17 @@ Pinoy Life Calculator is a simple financial tool made to help Filipinos estimate
 
 </div>
 
-
 <div class="footer">
 🇵🇭 Made for everyday Filipino money planning
+<br><br>
+
+<a href="privacy.html">Privacy Policy</a>
+&nbsp; • &nbsp;
+<a href="disclaimer.html">Disclaimer</a>
+
 </div>
 
 </main>
-
 
 <!-- SALARY -->
 
@@ -418,7 +423,6 @@ Calculate
 
 </main>
 
-
 <!-- BIR -->
 
 <main id="bir">
@@ -442,7 +446,6 @@ Calculate
 <div id="birResult" class="result" style="display:none"></div>
 
 </main>
-
 
 <!-- SSS -->
 
@@ -468,7 +471,6 @@ Calculate
 
 </main>
 
-
 <!-- PAG-IBIG -->
 
 <main id="pagibig">
@@ -492,7 +494,6 @@ Calculate
 <div id="pagibigResult" class="result" style="display:none"></div>
 
 </main>
-
 
 <!-- BUDGET -->
 
@@ -544,7 +545,6 @@ Calculate Budget
 
 </main>
 
-
 <!-- SAVINGS -->
 
 <main id="savings">
@@ -577,7 +577,6 @@ Calculate Goal
 
 </main>
 
-
 <script>
 
 /* PAGE NAVIGATION */
@@ -595,7 +594,6 @@ document.getElementById(page).style.display="block";
 window.scrollTo(0,0);
 }
 
-
 function home(){
 
 ["salary","bir","sss","pagibig","budget","savings"].forEach(function(id){
@@ -609,7 +607,6 @@ showDashboard();
 
 window.scrollTo(0,0);
 }
-
 
 /* HISTORY */
 
@@ -636,7 +633,6 @@ JSON.stringify(history)
 
 showHistory();
 }
-
 
 function showHistory(){
 
@@ -665,7 +661,6 @@ x.text+"<br>"+
 }).join("");
 }
 
-
 function clearHistory(){
 
 localStorage.removeItem("pinoyHistory");
@@ -673,7 +668,6 @@ localStorage.removeItem("pinoyHistory");
 showHistory();
 
 }
-
 
 /* SSS */
 
@@ -689,7 +683,6 @@ Math.ceil(s/500)*500
 
 return m*.05;
 }
-
 
 /* SALARY */
 
@@ -771,7 +764,6 @@ saveHistory(
 
 }
 
-
 /* BIR */
 
 function birCalc(){
@@ -837,7 +829,6 @@ saveHistory(
 
 }
 
-
 /* SSS */
 
 function sssCalc(){
@@ -885,7 +876,6 @@ saveHistory(
 );
 
 }
-
 
 /* PAG-IBIG */
 
@@ -936,7 +926,6 @@ saveHistory(
 );
 
 }
-
 
 /* BUDGET */
 
@@ -1000,7 +989,6 @@ saveHistory(
 );
 
 }
-
 
 /* SAVINGS */
 
@@ -1150,7 +1138,6 @@ months+" month(s)")
 
 }
 
-
 /* DASHBOARD */
 
 function showDashboard(){
@@ -1198,7 +1185,6 @@ document.getElementById("dashName").innerText=
 
 }
 
-
 /* CLEAR */
 
 function clearBox(input,result){
@@ -1208,7 +1194,6 @@ document.getElementById(input).value="";
 document.getElementById(result).style.display="none";
 
 }
-
 
 function clearBudget(){
 
@@ -1233,7 +1218,6 @@ document.getElementById("budgetResult").style.display="none";
 
 }
 
-
 function clearSavings(){
 
 [
@@ -1250,7 +1234,6 @@ document.getElementById(id).value="";
 document.getElementById("savingsResult").style.display="none";
 
 }
-
 
 /* START */
 
