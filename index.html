@@ -17,21 +17,17 @@ color:#263238;
 header{
 background:linear-gradient(135deg,#00A898,#008f82);
 color:white;
-padding:32px 20px 28px;
+padding:30px 20px;
 border-radius:0 0 30px 30px;
 text-align:center;
 box-shadow:0 5px 18px rgba(0,168,152,.25);
 }
 
-.logo{
-font-size:42px;
-margin-bottom:8px;
-}
+.logo{font-size:40px}
 
 h1{
-margin:0;
+margin:5px 0;
 font-size:26px;
-font-weight:800;
 }
 
 header p{
@@ -40,52 +36,52 @@ font-size:14px;
 }
 
 main{
-padding:22px 18px;
+padding:20px 18px;
 max-width:600px;
 margin:auto;
 }
 
-.home-title{
-text-align:center;
-margin:5px 0 20px;
-}
+.home-title{text-align:center}
 
 .home-title h2{
-margin:0;
-font-size:22px;
+margin-bottom:5px;
 }
 
 .home-title p{
-font-size:14px;
 color:#78909c;
-margin-top:7px;
+font-size:14px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:14px;
+margin-top:20px;
+}
+
+button{
+font-family:Arial;
+cursor:pointer;
 }
 
 .tool{
 background:white;
-border:1px solid #e6eeee;
+border:0;
 border-radius:20px;
-padding:22px 10px;
+padding:20px 8px;
 font-size:15px;
-font-weight:700;
-color:#263238;
-box-shadow:0 5px 16px rgba(0,0,0,.07);
+font-weight:bold;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
 }
 
 .tool:active{
-transform:scale(.96);
+transform:scale(.97);
 }
 
 .icon{
-font-size:34px;
 display:block;
-margin-bottom:10px;
+font-size:32px;
+margin-bottom:8px;
 }
 
 .tool small{
@@ -96,6 +92,63 @@ color:#90a4ae;
 margin-top:5px;
 }
 
+.dashboard{
+background:white;
+border-radius:20px;
+padding:20px;
+margin-top:22px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.dashboard h3{
+margin-top:0;
+color:#008f82;
+}
+
+.dash-number{
+font-size:28px;
+font-weight:bold;
+color:#00A898;
+}
+
+.dash-label{
+font-size:12px;
+color:#78909c;
+}
+
+.dash-progress{
+height:14px;
+background:#e0eeee;
+border-radius:20px;
+overflow:hidden;
+margin-top:12px;
+}
+
+.dash-fill{
+height:100%;
+background:linear-gradient(90deg,#00A898,#FFC00E);
+border-radius:20px;
+}
+
+.about{
+background:white;
+border-radius:20px;
+padding:20px;
+margin-top:22px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
+}
+
+.about h3{
+color:#008f82;
+margin-top:0;
+}
+
+.about p{
+font-size:13px;
+line-height:1.7;
+color:#607d8b;
+}
+
 .back{
 width:100%;
 background:#e0f7f4;
@@ -103,30 +156,23 @@ color:#008f82;
 border:0;
 border-radius:14px;
 padding:14px;
-font-size:15px;
-font-weight:700;
+font-weight:bold;
 margin-bottom:18px;
 }
 
-.page-title{
-margin-bottom:20px;
-}
-
 .page-title h2{
-margin:0;
-font-size:23px;
+margin-bottom:5px;
 }
 
 .page-title p{
-color:#78909c;
 font-size:13px;
-margin-top:6px;
+color:#78909c;
 }
 
 label{
 display:block;
-font-weight:700;
 font-size:14px;
+font-weight:bold;
 margin-top:14px;
 }
 
@@ -143,7 +189,6 @@ background:white;
 
 input:focus{
 border-color:#00A898;
-box-shadow:0 0 0 3px rgba(0,168,152,.10);
 }
 
 .calcbtn{
@@ -154,9 +199,8 @@ border:0;
 border-radius:14px;
 padding:16px;
 font-size:16px;
-font-weight:700;
+font-weight:bold;
 margin-top:15px;
-box-shadow:0 5px 12px rgba(0,168,152,.25);
 }
 
 .clearbtn{
@@ -165,16 +209,15 @@ background:white;
 color:#008f82;
 border:2px solid #00A898;
 border-radius:14px;
-padding:14px;
-font-size:15px;
-font-weight:700;
+padding:13px;
+font-weight:bold;
 margin-top:10px;
 }
 
 .result{
 background:white;
 border-left:5px solid #FFC00E;
-padding:19px;
+padding:18px;
 border-radius:15px;
 margin-top:18px;
 line-height:1.8;
@@ -183,39 +226,55 @@ box-shadow:0 4px 14px rgba(0,0,0,.06);
 
 .tip{
 background:#fff8dc;
-padding:12px;
+padding:11px;
 border-radius:10px;
 margin-top:12px;
 font-size:13px;
 color:#795548;
 }
 
-.about{
-background:white;
-border-radius:20px;
-padding:20px;
-margin-top:25px;
-box-shadow:0 5px 16px rgba(0,0,0,.06);
-text-align:left;
+.progress-box{
+margin-top:15px;
+background:#f4fbfa;
+padding:15px;
+border-radius:15px;
 }
 
-.about h3{
-margin-top:0;
-color:#008f82;
-}
-
-.about p{
+.progress-top{
+display:flex;
+justify-content:space-between;
 font-size:13px;
-line-height:1.7;
-color:#607d8b;
+font-weight:bold;
+}
+
+.progress-bar{
+height:18px;
+background:#dceeed;
+border-radius:20px;
+overflow:hidden;
+margin-top:8px;
+}
+
+.progress-fill{
+height:100%;
+background:linear-gradient(90deg,#00A898,#FFC00E);
+border-radius:20px;
+transition:.5s;
+}
+
+.progress-percent{
+text-align:center;
+font-weight:bold;
+color:#008f82;
+margin-top:7px;
 }
 
 .history{
 background:white;
 border-radius:20px;
 padding:20px;
-margin-top:25px;
-box-shadow:0 5px 16px rgba(0,0,0,.06);
+margin-top:22px;
+box-shadow:0 4px 14px rgba(0,0,0,.07);
 }
 
 .history h3{
@@ -224,18 +283,14 @@ color:#008f82;
 }
 
 .history-item{
-border-bottom:1px solid #edf2f2;
 padding:12px 0;
+border-bottom:1px solid #edf2f2;
 font-size:13px;
 line-height:1.6;
 }
 
-.history-item:last-child{
-border-bottom:0;
-}
-
 .history-type{
-font-weight:700;
+font-weight:bold;
 color:#008f82;
 }
 
@@ -246,59 +301,20 @@ color:#90a4ae;
 
 .history-clear{
 width:100%;
-background:#fff;
+background:white;
 color:#e57373;
 border:1px solid #e57373;
 border-radius:12px;
 padding:12px;
-font-weight:700;
+font-weight:bold;
 margin-top:12px;
 }
 
 .empty-history{
-font-size:13px;
+text-align:center;
 color:#90a4ae;
-text-align:center;
-padding:10px 0;
-}
-
-/* SAVINGS PROGRESS */
-
-.progress-box{
-margin-top:18px;
-background:#f4fbfa;
-padding:15px;
-border-radius:15px;
-}
-
-.progress-top{
-display:flex;
-justify-content:space-between;
 font-size:13px;
-font-weight:700;
-margin-bottom:8px;
-}
-
-.progress-bar{
-height:18px;
-background:#dceeed;
-border-radius:20px;
-overflow:hidden;
-}
-
-.progress-fill{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#00A898,#FFC00E);
-border-radius:20px;
-transition:width .5s ease;
-}
-
-.progress-percent{
-text-align:center;
-font-weight:800;
-color:#008f82;
-margin-top:8px;
+padding:10px;
 }
 
 .footer{
@@ -310,20 +326,8 @@ padding:25px 10px;
 
 #salary,#bir,#sss,#pagibig,#budget,#savings{
 display:none;
-text-align:left;
 }
 
-@media(max-width:380px){
-
-.grid{
-gap:10px;
-}
-
-.tool{
-padding:18px 7px;
-font-size:14px;
-}
-}
 </style>
 </head>
 
@@ -356,69 +360,85 @@ font-size:14px;
 <div class="grid">
 
 <button class="tool" onclick="openPage('salary')">
-
 <span class="icon">💰</span>
-
 Salary Calculator
-
 <small>Estimate take-home pay</small>
-
 </button>
-
 
 <button class="tool" onclick="openPage('bir')">
-
 <span class="icon">🧾</span>
-
 BIR Tax
-
 <small>Estimate income tax</small>
-
 </button>
-
 
 <button class="tool" onclick="openPage('sss')">
-
 <span class="icon">🏦</span>
-
 SSS Calculator
-
 <small>Estimate contribution</small>
-
 </button>
-
 
 <button class="tool" onclick="openPage('pagibig')">
-
 <span class="icon">🏠</span>
-
 Pag-IBIG
-
 <small>Estimate contribution</small>
-
 </button>
-
 
 <button class="tool" onclick="openPage('budget')">
-
 <span class="icon">📊</span>
-
 Budget Planner
-
 <small>Plan your expenses</small>
-
 </button>
-
 
 <button class="tool" onclick="openPage('savings')">
-
 <span class="icon">🎯</span>
-
 Savings Goal
-
 <small>Reach your money goals</small>
-
 </button>
+
+</div>
+
+
+<!-- SAVINGS DASHBOARD -->
+
+<div class="dashboard">
+
+<h3>📈 Savings Dashboard</h3>
+
+<div class="dash-number" id="dashGoal">
+₱0.00
+</div>
+
+<div class="dash-label">
+Current Savings
+</div>
+
+<br>
+
+<div class="dash-number" id="dashTarget">
+₱0.00
+</div>
+
+<div class="dash-label">
+Savings Target
+</div>
+
+<div class="dash-progress">
+
+<div
+id="dashFill"
+class="dash-fill"
+style="width:0%">
+</div>
+
+</div>
+
+<p id="dashPercent">
+0% of your goal
+</p>
+
+<p id="dashGoalName">
+No savings goal yet.
+</p>
 
 </div>
 
@@ -431,7 +451,9 @@ Savings Goal
 
 <div id="historyList"></div>
 
-<button class="history-clear" onclick="clearHistory()">
+<button
+class="history-clear"
+onclick="clearHistory()">
 
 🗑️ Clear History
 
@@ -465,7 +487,6 @@ for planning purposes only.
 
 </div>
 
-
 <div class="footer">
 
 🇵🇭 Made for everyday Filipino money planning
@@ -496,15 +517,22 @@ for planning purposes only.
 <input
 id="salaryInput"
 type="number"
-placeholder="Example: 20000"
->
+placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="salaryCalc()">
+<button
+class="calcbtn"
+onclick="salaryCalc()">
+
 Calculate Salary
+
 </button>
 
-<button class="clearbtn" onclick="clearSalary()">
+<button
+class="clearbtn"
+onclick="clearSalary()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -537,15 +565,22 @@ style="display:none">
 <input
 id="birInput"
 type="number"
-placeholder="Example: 20000"
->
+placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="birCalc()">
+<button
+class="calcbtn"
+onclick="birCalc()">
+
 Calculate Tax
+
 </button>
 
-<button class="clearbtn" onclick="clearBIR()">
+<button
+class="clearbtn"
+onclick="clearBIR()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -578,15 +613,22 @@ style="display:none">
 <input
 id="sssInput"
 type="number"
-placeholder="Example: 20000"
->
+placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="sssCalc()">
+<button
+class="calcbtn"
+onclick="sssCalc()">
+
 Calculate SSS
+
 </button>
 
-<button class="clearbtn" onclick="clearSSS()">
+<button
+class="clearbtn"
+onclick="clearSSS()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -598,7 +640,7 @@ style="display:none">
 </main>
 
 
-<!-- PAG-IBIG -->
+<!-- PAGIBIG -->
 
 <main id="pagibig">
 
@@ -619,15 +661,22 @@ style="display:none">
 <input
 id="pagibigInput"
 type="number"
-placeholder="Example: 20000"
->
+placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="pagibigCalc()">
+<button
+class="calcbtn"
+onclick="pagibigCalc()">
+
 Calculate Pag-IBIG
+
 </button>
 
-<button class="clearbtn" onclick="clearPagibig()">
+<button
+class="clearbtn"
+onclick="clearPagibig()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -656,55 +705,49 @@ style="display:none">
 </div>
 
 <label>Monthly Income</label>
-
-<input
-id="budgetIncome"
-type="number"
-placeholder="Example: 20000"
->
+<input id="budgetIncome" type="number" placeholder="Example: 20000">
 
 <label>🏠 Rent / Housing</label>
-
 <input id="rent" type="number" placeholder="₱">
 
 <label>🍚 Food / Groceries</label>
-
 <input id="food" type="number" placeholder="₱">
 
 <label>💡 Electricity</label>
-
 <input id="electricity" type="number" placeholder="₱">
 
 <label>💧 Water</label>
-
 <input id="water" type="number" placeholder="₱">
 
 <label>📱 Internet / Load</label>
-
 <input id="internet" type="number" placeholder="₱">
 
 <label>🚗 Transportation</label>
-
 <input id="transport" type="number" placeholder="₱">
 
 <label>👶 Family / Children</label>
-
 <input id="family" type="number" placeholder="₱">
 
 <label>💳 Debt / Loans</label>
-
 <input id="debt" type="number" placeholder="₱">
 
 <label>🛍️ Other Expenses</label>
-
 <input id="other" type="number" placeholder="₱">
 
-<button class="calcbtn" onclick="budgetCalc()">
+<button
+class="calcbtn"
+onclick="budgetCalc()">
+
 Calculate Budget
+
 </button>
 
-<button class="clearbtn" onclick="clearBudget()">
+<button
+class="clearbtn"
+onclick="clearBudget()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -737,39 +780,43 @@ style="display:none">
 <input
 id="goalName"
 type="text"
-placeholder="Example: iPhone"
->
+placeholder="Example: iPhone">
 
 <label>Target Amount</label>
 
 <input
 id="target"
 type="number"
-placeholder="Example: 30000"
->
+placeholder="Example: 30000">
 
 <label>Current Savings</label>
 
 <input
 id="current"
 type="number"
-placeholder="Example: 100"
->
+placeholder="Example: 10000">
 
 <label>Monthly Savings</label>
 
 <input
 id="monthly"
 type="number"
-placeholder="Example: 1000"
->
+placeholder="Example: 1000">
 
-<button class="calcbtn" onclick="savingsCalc()">
+<button
+class="calcbtn"
+onclick="savingsCalc()">
+
 Calculate Goal
+
 </button>
 
-<button class="clearbtn" onclick="clearSavings()">
+<button
+class="clearbtn"
+onclick="clearSavings()">
+
 🔄 Clear
+
 </button>
 
 <div
@@ -784,23 +831,18 @@ style="display:none">
 <script>
 
 
-/* PAGE NAVIGATION */
+/* NAVIGATION */
 
 function openPage(page){
 
 document.getElementById("home").style.display="none";
 
-document.getElementById("salary").style.display="none";
+["salary","bir","sss","pagibig","budget","savings"]
+.forEach(function(id){
 
-document.getElementById("bir").style.display="none";
+document.getElementById(id).style.display="none";
 
-document.getElementById("sss").style.display="none";
-
-document.getElementById("pagibig").style.display="none";
-
-document.getElementById("budget").style.display="none";
-
-document.getElementById("savings").style.display="none";
+});
 
 document.getElementById(page).style.display="block";
 
@@ -811,21 +853,18 @@ window.scrollTo(0,0);
 
 function home(){
 
-document.getElementById("salary").style.display="none";
+["salary","bir","sss","pagibig","budget","savings"]
+.forEach(function(id){
 
-document.getElementById("bir").style.display="none";
+document.getElementById(id).style.display="none";
 
-document.getElementById("sss").style.display="none";
-
-document.getElementById("pagibig").style.display="none";
-
-document.getElementById("budget").style.display="none";
-
-document.getElementById("savings").style.display="none";
+});
 
 document.getElementById("home").style.display="block";
 
 showHistory();
+
+showDashboard();
 
 window.scrollTo(0,0);
 
@@ -843,9 +882,7 @@ localStorage.getItem("pinoyHistory")||"[]"
 history.unshift({
 
 type:type,
-
 text:text,
-
 date:new Date().toLocaleString()
 
 });
@@ -888,6 +925,7 @@ return;
 list.innerHTML=history.map(function(item){
 
 return `
+
 <div class="history-item">
 
 <div class="history-type">
@@ -903,6 +941,7 @@ ${item.date}
 </div>
 
 </div>
+
 `;
 
 }).join("");
@@ -931,7 +970,7 @@ Math.ceil(s/500)*500
 )
 );
 
-return m*0.05;
+return m*.05;
 
 }
 
@@ -998,27 +1037,12 @@ document.getElementById("salaryResult").style.display="block";
 document.getElementById("salaryResult").innerHTML=
 
 "<b>Estimated Deductions</b><br><br>"+
-
 "SSS: ₱"+a.toFixed(2)+"<br>"+
-
 "PhilHealth: ₱"+p.toFixed(2)+"<br>"+
-
 "Pag-IBIG: ₱"+pg.toFixed(2)+"<br>"+
-
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
-
-"<b>Total Deductions: ₱"+
-
-total.toFixed(2)+
-
-"</b><br><br>"+
-
-"<b>Estimated Take-home Pay: ₱"+
-
-net.toFixed(2)+
-
-"</b>"+
-
+"<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
+"<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1077,16 +1101,9 @@ document.getElementById("birResult").style.display="block";
 document.getElementById("birResult").innerHTML=
 
 "<b>Estimated Monthly BIR Tax</b><br><br>"+
-
-"Taxable Income: ₱"+
-income.toFixed(2)+
-
+"Taxable Income: ₱"+income.toFixed(2)+
 "<br><br>"+
-
-"<b>Estimated Tax: ₱"+
-tax.toFixed(2)+
-"</b>"+
-
+"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1129,19 +1146,9 @@ document.getElementById("sssResult").style.display="block";
 document.getElementById("sssResult").innerHTML=
 
 "<b>Estimated SSS Contribution</b><br><br>"+
-
-"Monthly Salary: ₱"+
-s.toFixed(2)+
-"<br>"+
-
-"Monthly Salary Credit: ₱"+
-m.toFixed(2)+
-"<br><br>"+
-
-"<b>Employee Contribution: ₱"+
-employee.toFixed(2)+
-"</b>"+
-
+"Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
+"Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
+"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1188,15 +1195,11 @@ document.getElementById("pagibigResult").style.display="block";
 document.getElementById("pagibigResult").innerHTML=
 
 "<b>Estimated Pag-IBIG Contribution</b><br><br>"+
-
-"Monthly Salary: ₱"+
-s.toFixed(2)+
+"Monthly Salary: ₱"+s.toFixed(2)+
 "<br><br>"+
-
 "<b>Employee Contribution: ₱"+
 employee.toFixed(2)+
 "</b>"+
-
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1224,43 +1227,27 @@ return;
 
 }
 
-let rent=
-Number(document.getElementById("rent").value)||0;
+let ids=[
+"rent",
+"food",
+"electricity",
+"water",
+"internet",
+"transport",
+"family",
+"debt",
+"other"
+];
 
-let food=
-Number(document.getElementById("food").value)||0;
+let total=0;
 
-let electricity=
-Number(document.getElementById("electricity").value)||0;
+ids.forEach(function(id){
 
-let water=
-Number(document.getElementById("water").value)||0;
+total+=Number(
+document.getElementById(id).value
+)||0;
 
-let internet=
-Number(document.getElementById("internet").value)||0;
-
-let transport=
-Number(document.getElementById("transport").value)||0;
-
-let family=
-Number(document.getElementById("family").value)||0;
-
-let debt=
-Number(document.getElementById("debt").value)||0;
-
-let other=
-Number(document.getElementById("other").value)||0;
-
-let total=
-rent+
-food+
-electricity+
-water+
-internet+
-transport+
-family+
-debt+
-other;
+});
 
 let remaining=income-total;
 
@@ -1269,19 +1256,13 @@ document.getElementById("budgetResult").style.display="block";
 document.getElementById("budgetResult").innerHTML=
 
 "<b>📊 Budget Summary</b><br><br>"+
-
-"Monthly Income: ₱"+
-income.toFixed(2)+
+"Monthly Income: ₱"+income.toFixed(2)+
 "<br>"+
-
-"Total Expenses: ₱"+
-total.toFixed(2)+
+"Total Expenses: ₱"+total.toFixed(2)+
 "<br><br>"+
-
 "<b>Remaining Money: ₱"+
 remaining.toFixed(2)+
 "</b>"+
-
 "<div class='tip'>💡 Consider saving part of your remaining money.</div>";
 
 saveHistory(
@@ -1297,16 +1278,14 @@ saveHistory(
 
 function savingsCalc(){
 
-let goal=
-document.getElementById("goalName").value||
+let goal=document.getElementById("goalName").value||
 "My Savings Goal";
 
 let target=Number(
 document.getElementById("target").value
 );
 
-let current=
-Number(
+let current=Number(
 document.getElementById("current").value
 )||0;
 
@@ -1338,20 +1317,28 @@ return;
 
 }
 
-
-/* PROGRESS */
-
 let progress=(current/target)*100;
 
-if(progress>100)
+if(progress>100)progress=100;
 
-progress=100;
-
-if(progress<0)
-
-progress=0;
+if(progress<0)progress=0;
 
 let remaining=target-current;
+
+
+/* DASHBOARD SAVE */
+
+localStorage.setItem(
+"pinoySavings",
+JSON.stringify({
+goal:goal,
+target:target,
+current:current,
+progress:progress
+})
+);
+
+showDashboard();
 
 
 if(remaining<=0){
@@ -1361,41 +1348,29 @@ document.getElementById("savingsResult").style.display="block";
 document.getElementById("savingsResult").innerHTML=
 
 "<b>🎉 Goal Achieved!</b><br><br>"+
-
 "Goal: "+goal+
 "<br>"+
-
-"Target Amount: ₱"+
-target.toFixed(2)+
+"Target Amount: ₱"+target.toFixed(2)+
 "<br>"+
-
-"Current Savings: ₱"+
-current.toFixed(2)+
+"Current Savings: ₱"+current.toFixed(2)+
 "<br><br>"+
 
 "<div class='progress-box'>"+
-
 "<div class='progress-top'>"+
-
 "<span>Progress</span>"+
-
 "<span>100%</span>"+
-
 "</div>"+
 
 "<div class='progress-bar'>"+
-
 "<div class='progress-fill' style='width:100%'></div>"+
-
 "</div>"+
 
-"<div class='progress-percent'>100% Complete 🎉</div>"+
-
+"<div class='progress-percent'>"+
+"100% Complete 🎉"+
 "</div>"+
+"</div><br>"+
 
-"<br>"+
-
-"<b>You have already reached your savings goal!</b>";
+"<b>You have reached your savings goal!</b>";
 
 saveHistory(
 "🎯 Savings Goal",
@@ -1426,51 +1401,32 @@ document.getElementById("savingsResult").innerHTML=
 
 "Goal: "+goal+
 "<br>"+
-
-"Target Amount: ₱"+
-target.toFixed(2)+
+"Target Amount: ₱"+target.toFixed(2)+
 "<br>"+
-
-"Current Savings: ₱"+
-current.toFixed(2)+
+"Current Savings: ₱"+current.toFixed(2)+
 "<br>"+
-
-"Amount Remaining: ₱"+
-remaining.toFixed(2)+
+"Amount Remaining: ₱"+remaining.toFixed(2)+
 "<br>"+
-
-"Monthly Savings: ₱"+
-monthly.toFixed(2)+
+"Monthly Savings: ₱"+monthly.toFixed(2)+
 "<br><br>"+
-
 
 "<div class='progress-box'>"+
 
 "<div class='progress-top'>"+
-
 "<span>Progress</span>"+
-
 "<span>"+progress.toFixed(0)+"%</span>"+
-
 "</div>"+
 
 "<div class='progress-bar'>"+
-
 "<div class='progress-fill' style='width:"+progress+"%'></div>"+
-
 "</div>"+
 
 "<div class='progress-percent'>"+
-
 progress.toFixed(0)+
 "% Complete 🎯"+
-
 "</div>"+
 
-"</div>"+
-
-
-"<br>"+
+"</div><br>"+
 
 "<b>Estimated Time: "+
 months+
@@ -1484,7 +1440,6 @@ monthLeft+
 
 "<div class='tip'>💡 Stay consistent with your monthly savings.</div>";
 
-
 saveHistory(
 "🎯 Savings Goal",
 goal+" → "+months+" month(s)"
@@ -1493,7 +1448,52 @@ goal+" → "+months+" month(s)"
 }
 
 
-/* CLEAR */
+/* DASHBOARD */
+
+function showDashboard(){
+
+let data=JSON.parse(
+localStorage.getItem("pinoySavings")||"null"
+);
+
+let goal=document.getElementById("dashGoal");
+let target=document.getElementById("dashTarget");
+let fill=document.getElementById("dashFill");
+let percent=document.getElementById("dashPercent");
+let name=document.getElementById("dashGoalName");
+
+if(!data){
+
+goal.innerText="₱0.00";
+target.innerText="₱0.00";
+fill.style.width="0%";
+percent.innerText="0% of your goal";
+name.innerText="No savings goal yet.";
+
+return;
+
+}
+
+goal.innerText=
+"₱"+Number(data.current).toFixed(2);
+
+target.innerText=
+"₱"+Number(data.target).toFixed(2);
+
+fill.style.width=
+Number(data.progress)+"%";
+
+percent.innerText=
+Number(data.progress).toFixed(0)+
+"% of your goal";
+
+name.innerText=
+"🎯 Goal: "+data.goal;
+
+}
+
+
+/* CLEAR BUTTONS */
 
 function clearSalary(){
 
@@ -1533,8 +1533,7 @@ document.getElementById("pagibigResult").style.display="none";
 
 function clearBudget(){
 
-let ids=[
-
+[
 "budgetIncome",
 "rent",
 "food",
@@ -1545,10 +1544,7 @@ let ids=[
 "family",
 "debt",
 "other"
-
-];
-
-ids.forEach(function(id){
+].forEach(function(id){
 
 document.getElementById(id).value="";
 
@@ -1561,16 +1557,12 @@ document.getElementById("budgetResult").style.display="none";
 
 function clearSavings(){
 
-let ids=[
-
+[
 "goalName",
 "target",
 "current",
 "monthly"
-
-];
-
-ids.forEach(function(id){
+].forEach(function(id){
 
 document.getElementById(id).value="";
 
@@ -1581,9 +1573,11 @@ document.getElementById("savingsResult").style.display="none";
 }
 
 
-/* LOAD HISTORY */
+/* START */
 
 showHistory();
+
+showDashboard();
 
 </script>
 
