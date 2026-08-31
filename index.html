@@ -4,20 +4,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pinoy Life Calculator</title>
 <style>
-body{font-family:Arial;margin:0;background:#f5fbff;text-align:center;color:#333}
+body{font-family:Arial;margin:0;background:#f5fbff;color:#333;text-align:center}
 header{background:#00A898;color:white;padding:25px 15px;border-radius:0 0 25px 25px}
 h1{margin:0;font-size:25px}
 main{padding:20px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 button{background:white;border:0;border-radius:18px;padding:20px 8px;font-size:15px;box-shadow:0 3px 10px #ccc}
 .icon{font-size:30px;display:block;margin-bottom:7px}
-#calc{display:none;text-align:left}
 input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:18px;margin:8px 0 15px}
 .calcbtn{width:100%;background:#00A898;color:white}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
-.result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;font-size:16px}
+.result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
+#salary,#bir{display:none;text-align:left}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -27,13 +28,14 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 <main id="home">
 <h2>💰 Financial Tools</h2>
+
 <div class="grid">
 
-<button onclick="showCalc()">
+<button onclick="openPage('salary')">
 <span class="icon">💰</span>Salary Calculator
 </button>
 
-<button onclick="alert('BIR Tax Calculator coming soon!')">
+<button onclick="openPage('bir')">
 <span class="icon">🧾</span>BIR Tax
 </button>
 
@@ -56,93 +58,106 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 </div>
 </main>
 
-<main id="calc">
+<main id="salary">
 
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 <h2>💰 Salary Calculator</h2>
 
 <label>Monthly Basic Salary</label>
-<input id="salary" type="number" placeholder="Example: 20000">
+<input id="salaryInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="calculate()">Calculate</button>
+<button class="calcbtn" onclick="salaryCalc()">Calculate</button>
 
-<div id="result" class="result" style="display:none"></div>
+<div id="salaryResult" class="result" style="display:none"></div>
+
+</main>
+
+<main id="bir">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2>🧾 BIR Tax Calculator</h2>
+
+<label>Monthly Taxable Income</label>
+<input id="birInput" type="number" placeholder="Example: 20000">
+
+<button class="calcbtn" onclick="birCalc()">Calculate</button>
+
+<div id="birResult" class="result" style="display:none"></div>
 
 </main>
 
 <script>
 
-function showCalc(){
+function openPage(page){
 document.getElementById("home").style.display="none";
-document.getElementById("calc").style.display="block";
+document.getElementById("salary").style.display="none";
+document.getElementById("bir").style.display="none";
+document.getElementById(page).style.display="block";
 }
 
-function goHome(){
-document.getElementById("calc").style.display="none";
+function home(){
+document.getElementById("salary").style.display="none";
+document.getElementById("bir").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
-function sssContribution(salary){
-
-let msc=Math.max(5000,Math.min(35000,Math.ceil(salary/500)*500));
-
-return msc*0.05;
-
+function sss(s){
+let m=Math.max(5000,Math.min(35000,Math.ceil(s/500)*500));
+return m*.05;
 }
 
-function calculate(){
+function salaryCalc(){
 
-let s=Number(document.getElementById("salary").value);
+let s=Number(document.getElementById("salaryInput").value);
 
-if(s<=0){
-alert("Please enter your monthly salary.");
-return;
-}
+if(s<=0){alert("Enter your salary.");return}
 
-let sss=sssContribution(s);
-
-let phil=s*0.025;
-
-let pagibig=Math.min(s*0.02,100);
-
-let taxable=Math.max(0,s-sss-phil-pagibig);
-
+let a=sss(s);
+let p=s*.025;
+let pg=Math.min(s*.02,100);
+let taxable=Math.max(0,s-a-p-pg);
 let tax=0;
 
-if(taxable<=20833)
-tax=0;
+if(taxable>20833)tax=(taxable-20833)*.15;
 
-else if(taxable<=33333)
-tax=(taxable-20833)*0.15;
-
-else if(taxable<=66667)
-tax=1875+(taxable-33333)*0.20;
-
-else if(taxable<=166667)
-tax=8541.80+(taxable-66667)*0.25;
-
-else if(taxable<=666667)
-tax=33541.80+(taxable-166667)*0.30;
-
-else
-tax=183541.80+(taxable-666667)*0.35;
-
-let total=sss+phil+pagibig+tax;
-
+let total=a+p+pg+tax;
 let net=s-total;
 
-document.getElementById("result").style.display="block";
+document.getElementById("salaryResult").style.display="block";
 
-document.getElementById("result").innerHTML=
+document.getElementById("salaryResult").innerHTML=
 "<b>Estimated Deductions</b><br><br>"+
-"SSS: ₱"+sss.toFixed(2)+"<br>"+
-"PhilHealth: ₱"+phil.toFixed(2)+"<br>"+
-"Pag-IBIG: ₱"+pagibig.toFixed(2)+"<br>"+
+"SSS: ₱"+a.toFixed(2)+"<br>"+
+"PhilHealth: ₱"+p.toFixed(2)+"<br>"+
+"Pag-IBIG: ₱"+pg.toFixed(2)+"<br>"+
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
 "<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
 "<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>";
+}
 
+function birCalc(){
+
+let income=Number(document.getElementById("birInput").value);
+
+if(income<=0){alert("Enter your income.");return}
+
+let tax=0;
+
+if(income<=20833)tax=0;
+else if(income<=33333)tax=(income-20833)*.15;
+else if(income<=66667)tax=1875+(income-33333)*.20;
+else if(income<=166667)tax=8541.80+(income-66667)*.25;
+else if(income<=666667)tax=33541.80+(income-166667)*.30;
+else tax=183541.80+(income-666667)*.35;
+
+document.getElementById("birResult").style.display="block";
+
+document.getElementById("birResult").innerHTML=
+"<b>Estimated Monthly BIR Tax</b><br><br>"+
+"Taxable Income: ₱"+income.toFixed(2)+"<br><br>"+
+"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>";
 }
 
 </script>
