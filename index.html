@@ -16,7 +16,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 .calcbtn{width:100%;background:#00A898;color:white}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
 .result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
-#salary,#bir,#sss,#pagibig{display:none;text-align:left}
+#salary,#bir,#sss,#pagibig,#budget{display:none;text-align:left}
 </style>
 </head>
 
@@ -48,7 +48,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 <span class="icon">🏠</span>Pag-IBIG
 </button>
 
-<button onclick="alert('Budget Planner coming soon!')">
+<button onclick="openPage('budget')">
 <span class="icon">📊</span>Budget Planner
 </button>
 
@@ -119,6 +119,48 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 </main>
 
+<main id="budget">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2>📊 Budget Planner</h2>
+
+<label>Monthly Income</label>
+<input id="budgetIncome" type="number" placeholder="Example: 20000">
+
+<label>🏠 Rent / Housing</label>
+<input id="rent" type="number" placeholder="₱">
+
+<label>🍚 Food / Groceries</label>
+<input id="food" type="number" placeholder="₱">
+
+<label>💡 Electricity</label>
+<input id="electricity" type="number" placeholder="₱">
+
+<label>💧 Water</label>
+<input id="water" type="number" placeholder="₱">
+
+<label>📱 Internet / Load</label>
+<input id="internet" type="number" placeholder="₱">
+
+<label>🚗 Transportation</label>
+<input id="transport" type="number" placeholder="₱">
+
+<label>👶 Family / Children</label>
+<input id="family" type="number" placeholder="₱">
+
+<label>💳 Debt / Loans</label>
+<input id="debt" type="number" placeholder="₱">
+
+<label>🛍️ Other Expenses</label>
+<input id="other" type="number" placeholder="₱">
+
+<button class="calcbtn" onclick="budgetCalc()">Calculate Budget</button>
+
+<div id="budgetResult" class="result" style="display:none"></div>
+
+</main>
+
 <script>
 
 function openPage(page){
@@ -127,6 +169,7 @@ document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
 document.getElementById("pagibig").style.display="none";
+document.getElementById("budget").style.display="none";
 document.getElementById(page).style.display="block";
 }
 
@@ -135,6 +178,7 @@ document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
 document.getElementById("pagibig").style.display="none";
+document.getElementById("budget").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
@@ -244,6 +288,39 @@ document.getElementById("pagibigResult").innerHTML=
 "Monthly Salary: ₱"+s.toFixed(2)+"<br><br>"+
 "<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
 "Note: Estimated amount only.";
+}
+
+function budgetCalc(){
+
+let income=Number(document.getElementById("budgetIncome").value);
+
+if(income<=0){
+alert("Enter your monthly income.");
+return;
+}
+
+let rent=Number(document.getElementById("rent").value)||0;
+let food=Number(document.getElementById("food").value)||0;
+let electricity=Number(document.getElementById("electricity").value)||0;
+let water=Number(document.getElementById("water").value)||0;
+let internet=Number(document.getElementById("internet").value)||0;
+let transport=Number(document.getElementById("transport").value)||0;
+let family=Number(document.getElementById("family").value)||0;
+let debt=Number(document.getElementById("debt").value)||0;
+let other=Number(document.getElementById("other").value)||0;
+
+let total=rent+food+electricity+water+internet+transport+family+debt+other;
+
+let remaining=income-total;
+
+document.getElementById("budgetResult").style.display="block";
+
+document.getElementById("budgetResult").innerHTML=
+"<b>📊 Budget Summary</b><br><br>"+
+"Monthly Income: ₱"+income.toFixed(2)+"<br>"+
+"Total Expenses: ₱"+total.toFixed(2)+"<br><br>"+
+"<b>Remaining Money: ₱"+remaining.toFixed(2)+"</b><br><br>"+
+"💡 Tip: Consider saving part of your remaining money.";
 }
 
 </script>
