@@ -11,57 +11,63 @@ body{
 font-family:Arial,sans-serif;
 margin:0;
 background:#f4fbfa;
-color:#263238;
+color:#263238
 }
 
 header{
 background:linear-gradient(135deg,#00A898,#008f82);
 color:white;
-padding:30px 20px;
+padding:25px 20px;
 border-radius:0 0 30px 30px;
-text-align:center;
-box-shadow:0 5px 18px rgba(0,168,152,.25);
+text-align:center
 }
 
-.logo{font-size:40px}
+.logo{
+width:125px;
+height:125px;
+object-fit:contain;
+display:block;
+margin:0 auto 10px;
+border-radius:25px
+}
 
-h1{
+header h1{
 margin:5px 0;
-font-size:26px;
+font-size:26px
 }
 
 header p{
-margin:8px 0 0;
-font-size:14px;
+margin:8px 0;
+font-size:14px
 }
 
 main{
-padding:20px 18px;
+padding:20px;
 max-width:600px;
-margin:auto;
+margin:auto
 }
 
 .home-title{text-align:center}
 
 .home-title h2{
-margin-bottom:5px;
+margin-bottom:5px
 }
 
 .home-title p{
 color:#78909c;
-font-size:14px;
+font-size:14px
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
-margin-top:20px;
+margin-top:20px
 }
 
 button{
 font-family:Arial;
-cursor:pointer;
+cursor:pointer
 }
 
 .tool{
@@ -71,17 +77,13 @@ border-radius:20px;
 padding:20px 8px;
 font-size:15px;
 font-weight:bold;
-box-shadow:0 4px 14px rgba(0,0,0,.07);
-}
-
-.tool:active{
-transform:scale(.97);
+box-shadow:0 4px 14px rgba(0,0,0,.07)
 }
 
 .icon{
 display:block;
 font-size:32px;
-margin-bottom:8px;
+margin-bottom:8px
 }
 
 .tool small{
@@ -89,31 +91,35 @@ display:block;
 font-size:11px;
 font-weight:normal;
 color:#90a4ae;
-margin-top:5px;
+margin-top:5px
 }
 
-.dashboard{
+.dashboard,
+.history,
+.about{
 background:white;
 border-radius:20px;
 padding:20px;
 margin-top:22px;
-box-shadow:0 4px 14px rgba(0,0,0,.07);
+box-shadow:0 4px 14px rgba(0,0,0,.07)
 }
 
-.dashboard h3{
+.dashboard h3,
+.history h3,
+.about h3{
 margin-top:0;
-color:#008f82;
+color:#008f82
 }
 
 .dash-number{
 font-size:28px;
 font-weight:bold;
-color:#00A898;
+color:#00A898
 }
 
 .dash-label{
 font-size:12px;
-color:#78909c;
+color:#78909c
 }
 
 .dash-progress{
@@ -121,32 +127,13 @@ height:14px;
 background:#e0eeee;
 border-radius:20px;
 overflow:hidden;
-margin-top:12px;
+margin-top:12px
 }
 
 .dash-fill{
 height:100%;
 background:linear-gradient(90deg,#00A898,#FFC00E);
-border-radius:20px;
-}
-
-.about{
-background:white;
-border-radius:20px;
-padding:20px;
-margin-top:22px;
-box-shadow:0 4px 14px rgba(0,0,0,.07);
-}
-
-.about h3{
-color:#008f82;
-margin-top:0;
-}
-
-.about p{
-font-size:13px;
-line-height:1.7;
-color:#607d8b;
+border-radius:20px
 }
 
 .back{
@@ -157,23 +144,14 @@ border:0;
 border-radius:14px;
 padding:14px;
 font-weight:bold;
-margin-bottom:18px;
-}
-
-.page-title h2{
-margin-bottom:5px;
-}
-
-.page-title p{
-font-size:13px;
-color:#78909c;
+margin-bottom:18px
 }
 
 label{
 display:block;
 font-size:14px;
 font-weight:bold;
-margin-top:14px;
+margin-top:14px
 }
 
 input{
@@ -184,11 +162,7 @@ border-radius:12px;
 font-size:17px;
 margin-top:7px;
 outline:none;
-background:white;
-}
-
-input:focus{
-border-color:#00A898;
+background:white
 }
 
 .calcbtn{
@@ -200,7 +174,7 @@ border-radius:14px;
 padding:16px;
 font-size:16px;
 font-weight:bold;
-margin-top:15px;
+margin-top:15px
 }
 
 .clearbtn{
@@ -211,7 +185,7 @@ border:2px solid #00A898;
 border-radius:14px;
 padding:13px;
 font-weight:bold;
-margin-top:10px;
+margin-top:10px
 }
 
 .result{
@@ -221,7 +195,7 @@ padding:18px;
 border-radius:15px;
 margin-top:18px;
 line-height:1.8;
-box-shadow:0 4px 14px rgba(0,0,0,.06);
+box-shadow:0 4px 14px rgba(0,0,0,.06)
 }
 
 .tip{
@@ -230,21 +204,14 @@ padding:11px;
 border-radius:10px;
 margin-top:12px;
 font-size:13px;
-color:#795548;
+color:#795548
 }
 
 .progress-box{
 margin-top:15px;
 background:#f4fbfa;
 padding:15px;
-border-radius:15px;
-}
-
-.progress-top{
-display:flex;
-justify-content:space-between;
-font-size:13px;
-font-weight:bold;
+border-radius:15px
 }
 
 .progress-bar{
@@ -252,82 +219,49 @@ height:18px;
 background:#dceeed;
 border-radius:20px;
 overflow:hidden;
-margin-top:8px;
+margin-top:8px
 }
 
 .progress-fill{
 height:100%;
 background:linear-gradient(90deg,#00A898,#FFC00E);
 border-radius:20px;
-transition:.5s;
-}
-
-.progress-percent{
-text-align:center;
-font-weight:bold;
-color:#008f82;
-margin-top:7px;
-}
-
-.history{
-background:white;
-border-radius:20px;
-padding:20px;
-margin-top:22px;
-box-shadow:0 4px 14px rgba(0,0,0,.07);
-}
-
-.history h3{
-margin-top:0;
-color:#008f82;
+transition:.5s
 }
 
 .history-item{
 padding:12px 0;
 border-bottom:1px solid #edf2f2;
 font-size:13px;
-line-height:1.6;
+line-height:1.6
 }
 
 .history-type{
 font-weight:bold;
-color:#008f82;
+color:#008f82
 }
 
 .history-date{
 font-size:11px;
-color:#90a4ae;
+color:#90a4ae
 }
 
-.history-clear{
-width:100%;
-background:white;
-color:#e57373;
-border:1px solid #e57373;
-border-radius:12px;
-padding:12px;
-font-weight:bold;
-margin-top:12px;
-}
-
-.empty-history{
+.empty{
 text-align:center;
 color:#90a4ae;
-font-size:13px;
-padding:10px;
+font-size:13px
 }
 
 .footer{
 text-align:center;
 font-size:12px;
 color:#90a4ae;
-padding:25px 10px;
+padding:25px 10px
 }
 
 #salary,#bir,#sss,#pagibig,#budget,#savings{
-display:none;
+display:none
 }
-
 </style>
 </head>
 
@@ -335,7 +269,7 @@ display:none;
 
 <header>
 
-<div class="logo">🇵🇭</div>
+<img src="1E8FF106-B3DC-4F16-B153-4E5F1C6E4E73.png" class="logo">
 
 <h1>Pinoy Life Calculator</h1>
 
@@ -343,8 +277,6 @@ display:none;
 
 </header>
 
-
-<!-- HOME -->
 
 <main id="home">
 
@@ -398,52 +330,28 @@ Savings Goal
 </div>
 
 
-<!-- SAVINGS DASHBOARD -->
-
 <div class="dashboard">
 
 <h3>📈 Savings Dashboard</h3>
 
-<div class="dash-number" id="dashGoal">
-₱0.00
-</div>
-
-<div class="dash-label">
-Current Savings
-</div>
+<div class="dash-number" id="dashCurrent">₱0.00</div>
+<div class="dash-label">Current Savings</div>
 
 <br>
 
-<div class="dash-number" id="dashTarget">
-₱0.00
-</div>
-
-<div class="dash-label">
-Savings Target
-</div>
+<div class="dash-number" id="dashTarget">₱0.00</div>
+<div class="dash-label">Savings Target</div>
 
 <div class="dash-progress">
-
-<div
-id="dashFill"
-class="dash-fill"
-style="width:0%">
+<div id="dashFill" class="dash-fill" style="width:0%"></div>
 </div>
 
-</div>
+<p id="dashPercent">0% of your goal</p>
 
-<p id="dashPercent">
-0% of your goal
-</p>
-
-<p id="dashGoalName">
-No savings goal yet.
-</p>
+<p id="dashName">No savings goal yet.</p>
 
 </div>
 
-
-<!-- HISTORY -->
 
 <div class="history">
 
@@ -451,27 +359,19 @@ No savings goal yet.
 
 <div id="historyList"></div>
 
-<button
-class="history-clear"
-onclick="clearHistory()">
-
+<button class="clearbtn" onclick="clearHistory()">
 🗑️ Clear History
-
 </button>
 
 </div>
 
-
-<!-- ABOUT -->
 
 <div class="about">
 
 <h3>🇵🇭 About Pinoy Life Calculator</h3>
 
 <p>
-Pinoy Life Calculator is a simple financial tool
-made to help Filipinos estimate salary,
-government contributions, budget, and savings goals.
+Pinoy Life Calculator is a simple financial tool made to help Filipinos estimate salary, government contributions, budget, and savings goals.
 </p>
 
 <p>
@@ -481,16 +381,14 @@ government contributions, budget, and savings goals.
 </p>
 
 <p>
-<strong>Note:</strong> Calculations are estimates
-for planning purposes only.
+<strong>Note:</strong> Calculations are estimates for planning purposes only.
 </p>
 
 </div>
 
+
 <div class="footer">
-
 🇵🇭 Made for everyday Filipino money planning
-
 </div>
 
 </main>
@@ -500,46 +398,23 @@ for planning purposes only.
 
 <main id="salary">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>💰 Salary Calculator</h2>
 
-<p>Estimate your monthly take-home pay.</p>
-
-</div>
-
 <label>Monthly Basic Salary</label>
 
-<input
-id="salaryInput"
-type="number"
-placeholder="Example: 20000">
+<input id="salaryInput" type="number" placeholder="Example: 20000">
 
-<button
-class="calcbtn"
-onclick="salaryCalc()">
-
-Calculate Salary
-
+<button class="calcbtn" onclick="salaryCalc()">
+Calculate
 </button>
 
-<button
-class="clearbtn"
-onclick="clearSalary()">
-
+<button class="clearbtn" onclick="clearBox('salaryInput','salaryResult')">
 🔄 Clear
-
 </button>
 
-<div
-id="salaryResult"
-class="result"
-style="display:none">
-</div>
+<div id="salaryResult" class="result" style="display:none"></div>
 
 </main>
 
@@ -548,46 +423,23 @@ style="display:none">
 
 <main id="bir">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>🧾 BIR Tax Calculator</h2>
 
-<p>Estimate your monthly BIR income tax.</p>
-
-</div>
-
 <label>Monthly Taxable Income</label>
 
-<input
-id="birInput"
-type="number"
-placeholder="Example: 20000">
+<input id="birInput" type="number" placeholder="Example: 20000">
 
-<button
-class="calcbtn"
-onclick="birCalc()">
-
-Calculate Tax
-
+<button class="calcbtn" onclick="birCalc()">
+Calculate
 </button>
 
-<button
-class="clearbtn"
-onclick="clearBIR()">
-
+<button class="clearbtn" onclick="clearBox('birInput','birResult')">
 🔄 Clear
-
 </button>
 
-<div
-id="birResult"
-class="result"
-style="display:none">
-</div>
+<div id="birResult" class="result" style="display:none"></div>
 
 </main>
 
@@ -596,94 +448,48 @@ style="display:none">
 
 <main id="sss">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>🏦 SSS Calculator</h2>
 
-<p>Estimate your employee SSS contribution.</p>
-
-</div>
-
 <label>Monthly Salary</label>
 
-<input
-id="sssInput"
-type="number"
-placeholder="Example: 20000">
+<input id="sssInput" type="number" placeholder="Example: 20000">
 
-<button
-class="calcbtn"
-onclick="sssCalc()">
-
-Calculate SSS
-
+<button class="calcbtn" onclick="sssCalc()">
+Calculate
 </button>
 
-<button
-class="clearbtn"
-onclick="clearSSS()">
-
+<button class="clearbtn" onclick="clearBox('sssInput','sssResult')">
 🔄 Clear
-
 </button>
 
-<div
-id="sssResult"
-class="result"
-style="display:none">
-</div>
+<div id="sssResult" class="result" style="display:none"></div>
 
 </main>
 
 
-<!-- PAGIBIG -->
+<!-- PAG-IBIG -->
 
 <main id="pagibig">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>🏠 Pag-IBIG Calculator</h2>
 
-<p>Estimate your employee contribution.</p>
-
-</div>
-
 <label>Monthly Salary</label>
 
-<input
-id="pagibigInput"
-type="number"
-placeholder="Example: 20000">
+<input id="pagibigInput" type="number" placeholder="Example: 20000">
 
-<button
-class="calcbtn"
-onclick="pagibigCalc()">
-
-Calculate Pag-IBIG
-
+<button class="calcbtn" onclick="pagibigCalc()">
+Calculate
 </button>
 
-<button
-class="clearbtn"
-onclick="clearPagibig()">
-
+<button class="clearbtn" onclick="clearBox('pagibigInput','pagibigResult')">
 🔄 Clear
-
 </button>
 
-<div
-id="pagibigResult"
-class="result"
-style="display:none">
-</div>
+<div id="pagibigResult" class="result" style="display:none"></div>
 
 </main>
 
@@ -692,17 +498,9 @@ style="display:none">
 
 <main id="budget">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>📊 Budget Planner</h2>
-
-<p>See how much money you have left each month.</p>
-
-</div>
 
 <label>Monthly Income</label>
 <input id="budgetIncome" type="number" placeholder="Example: 20000">
@@ -734,27 +532,15 @@ style="display:none">
 <label>🛍️ Other Expenses</label>
 <input id="other" type="number" placeholder="₱">
 
-<button
-class="calcbtn"
-onclick="budgetCalc()">
-
+<button class="calcbtn" onclick="budgetCalc()">
 Calculate Budget
-
 </button>
 
-<button
-class="clearbtn"
-onclick="clearBudget()">
-
+<button class="clearbtn" onclick="clearBudget()">
 🔄 Clear
-
 </button>
 
-<div
-id="budgetResult"
-class="result"
-style="display:none">
-</div>
+<div id="budgetResult" class="result" style="display:none"></div>
 
 </main>
 
@@ -763,111 +549,65 @@ style="display:none">
 
 <main id="savings">
 
-<button class="back" onclick="home()">
-← Back to Tools
-</button>
-
-<div class="page-title">
+<button class="back" onclick="home()">← Back</button>
 
 <h2>🎯 Savings Goal</h2>
 
-<p>Find out how long it may take to reach your goal.</p>
-
-</div>
-
 <label>Goal Name</label>
-
-<input
-id="goalName"
-type="text"
-placeholder="Example: iPhone">
+<input id="goalName" type="text" placeholder="Example: iPhone">
 
 <label>Target Amount</label>
-
-<input
-id="target"
-type="number"
-placeholder="Example: 30000">
+<input id="target" type="number" placeholder="Example: 30000">
 
 <label>Current Savings</label>
-
-<input
-id="current"
-type="number"
-placeholder="Example: 10000">
+<input id="current" type="number" placeholder="Example: 10000">
 
 <label>Monthly Savings</label>
+<input id="monthly" type="number" placeholder="Example: 1000">
 
-<input
-id="monthly"
-type="number"
-placeholder="Example: 1000">
-
-<button
-class="calcbtn"
-onclick="savingsCalc()">
-
+<button class="calcbtn" onclick="savingsCalc()">
 Calculate Goal
-
 </button>
 
-<button
-class="clearbtn"
-onclick="clearSavings()">
-
+<button class="clearbtn" onclick="clearSavings()">
 🔄 Clear
-
 </button>
 
-<div
-id="savingsResult"
-class="result"
-style="display:none">
-</div>
+<div id="savingsResult" class="result" style="display:none"></div>
 
 </main>
 
 
 <script>
 
-
-/* NAVIGATION */
+/* PAGE NAVIGATION */
 
 function openPage(page){
 
 document.getElementById("home").style.display="none";
 
-["salary","bir","sss","pagibig","budget","savings"]
-.forEach(function(id){
-
+["salary","bir","sss","pagibig","budget","savings"].forEach(function(id){
 document.getElementById(id).style.display="none";
-
 });
 
 document.getElementById(page).style.display="block";
 
 window.scrollTo(0,0);
-
 }
 
 
 function home(){
 
-["salary","bir","sss","pagibig","budget","savings"]
-.forEach(function(id){
-
+["salary","bir","sss","pagibig","budget","savings"].forEach(function(id){
 document.getElementById(id).style.display="none";
-
 });
 
 document.getElementById("home").style.display="block";
 
 showHistory();
-
 showDashboard();
 
 window.scrollTo(0,0);
-
 }
 
 
@@ -880,17 +620,13 @@ localStorage.getItem("pinoyHistory")||"[]"
 );
 
 history.unshift({
-
 type:type,
 text:text,
 date:new Date().toLocaleString()
-
 });
 
 if(history.length>10){
-
 history=history.slice(0,10);
-
 }
 
 localStorage.setItem(
@@ -899,15 +635,12 @@ JSON.stringify(history)
 );
 
 showHistory();
-
 }
 
 
 function showHistory(){
 
 let list=document.getElementById("historyList");
-
-if(!list)return;
 
 let history=JSON.parse(
 localStorage.getItem("pinoyHistory")||"[]"
@@ -916,36 +649,20 @@ localStorage.getItem("pinoyHistory")||"[]"
 if(history.length===0){
 
 list.innerHTML=
-"<div class='empty-history'>No calculations yet.</div>";
+"<div class='empty'>No calculations yet.</div>";
 
 return;
-
 }
 
-list.innerHTML=history.map(function(item){
+list.innerHTML=history.map(function(x){
 
-return `
-
-<div class="history-item">
-
-<div class="history-type">
-${item.type}
-</div>
-
-<div>
-${item.text}
-</div>
-
-<div class="history-date">
-${item.date}
-</div>
-
-</div>
-
-`;
+return "<div class='history-item'>"+
+"<div class='history-type'>"+x.type+"</div>"+
+x.text+"<br>"+
+"<span class='history-date'>"+x.date+"</span>"+
+"</div>";
 
 }).join("");
-
 }
 
 
@@ -971,7 +688,6 @@ Math.ceil(s/500)*500
 );
 
 return m*.05;
-
 }
 
 
@@ -988,58 +704,60 @@ if(s<=0){
 alert("Enter your salary.");
 
 return;
-
 }
 
-let a=sssAmount(s);
+let sss=sssAmount(s);
 
-let p=s*.025;
+let phil=s*.025;
 
-let pg=Math.min(s*.02,100);
+let pagibig=Math.min(s*.02,100);
 
 let taxable=Math.max(
 0,
-s-a-p-pg
+s-sss-phil-pagibig
 );
 
 let tax=0;
 
-if(taxable<=20833)
+if(taxable<=20833){
 
 tax=0;
 
-else if(taxable<=33333)
+}else if(taxable<=33333){
 
 tax=(taxable-20833)*.15;
 
-else if(taxable<=66667)
+}else if(taxable<=66667){
 
 tax=1875+(taxable-33333)*.20;
 
-else if(taxable<=166667)
+}else if(taxable<=166667){
 
 tax=8541.80+(taxable-66667)*.25;
 
-else if(taxable<=666667)
+}else if(taxable<=666667){
 
 tax=33541.80+(taxable-166667)*.30;
 
-else
+}else{
 
 tax=183541.80+(taxable-666667)*.35;
 
-let total=a+p+pg+tax;
+}
+
+let total=sss+phil+pagibig+tax;
 
 let net=s-total;
 
-document.getElementById("salaryResult").style.display="block";
+let r=document.getElementById("salaryResult");
 
-document.getElementById("salaryResult").innerHTML=
+r.style.display="block";
 
+r.innerHTML=
 "<b>Estimated Deductions</b><br><br>"+
-"SSS: ₱"+a.toFixed(2)+"<br>"+
-"PhilHealth: ₱"+p.toFixed(2)+"<br>"+
-"Pag-IBIG: ₱"+pg.toFixed(2)+"<br>"+
+"SSS: ₱"+sss.toFixed(2)+"<br>"+
+"PhilHealth: ₱"+phil.toFixed(2)+"<br>"+
+"Pag-IBIG: ₱"+pagibig.toFixed(2)+"<br>"+
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
 "<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
 "<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>"+
@@ -1067,43 +785,48 @@ if(income<=0){
 alert("Enter your income.");
 
 return;
-
 }
 
 let tax=0;
 
-if(income<=20833)
+if(income<=20833){
 
 tax=0;
 
-else if(income<=33333)
+}else if(income<=33333){
 
 tax=(income-20833)*.15;
 
-else if(income<=66667)
+}else if(income<=66667){
 
 tax=1875+(income-33333)*.20;
 
-else if(income<=166667)
+}else if(income<=166667){
 
 tax=8541.80+(income-66667)*.25;
 
-else if(income<=666667)
+}else if(income<=666667){
 
 tax=33541.80+(income-166667)*.30;
 
-else
+}else{
 
 tax=183541.80+(income-666667)*.35;
 
-document.getElementById("birResult").style.display="block";
+}
 
-document.getElementById("birResult").innerHTML=
+let r=document.getElementById("birResult");
 
+r.style.display="block";
+
+r.innerHTML=
 "<b>Estimated Monthly BIR Tax</b><br><br>"+
-"Taxable Income: ₱"+income.toFixed(2)+
+"Taxable Income: ₱"+
+income.toFixed(2)+
 "<br><br>"+
-"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>"+
+"<b>Estimated Tax: ₱"+
+tax.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1128,7 +851,6 @@ if(s<=0){
 alert("Enter your salary.");
 
 return;
-
 }
 
 let m=Math.max(
@@ -1141,14 +863,19 @@ Math.ceil(s/500)*500
 
 let employee=m*.05;
 
-document.getElementById("sssResult").style.display="block";
+let r=document.getElementById("sssResult");
 
-document.getElementById("sssResult").innerHTML=
+r.style.display="block";
 
+r.innerHTML=
 "<b>Estimated SSS Contribution</b><br><br>"+
-"Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
-"Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
-"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
+"Monthly Salary: ₱"+s.toFixed(2)+
+"<br>"+
+"Monthly Salary Credit: ₱"+m.toFixed(2)+
+"<br><br>"+
+"<b>Employee Contribution: ₱"+
+employee.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
 
 saveHistory(
@@ -1173,27 +900,27 @@ if(s<=0){
 alert("Enter your salary.");
 
 return;
-
 }
 
 let employee;
 
-if(s<=1500)
+if(s<=1500){
 
 employee=s*.01;
 
-else
+}else{
 
 employee=s*.02;
 
-if(employee>100)
+}
 
-employee=100;
+employee=Math.min(employee,100);
 
-document.getElementById("pagibigResult").style.display="block";
+let r=document.getElementById("pagibigResult");
 
-document.getElementById("pagibigResult").innerHTML=
+r.style.display="block";
 
+r.innerHTML=
 "<b>Estimated Pag-IBIG Contribution</b><br><br>"+
 "Monthly Salary: ₱"+s.toFixed(2)+
 "<br><br>"+
@@ -1224,7 +951,6 @@ if(income<=0){
 alert("Enter your monthly income.");
 
 return;
-
 }
 
 let ids=[
@@ -1243,22 +969,24 @@ let total=0;
 
 ids.forEach(function(id){
 
-total+=Number(
-document.getElementById(id).value
-)||0;
+total+=
+Number(document.getElementById(id).value)||0;
 
 });
 
 let remaining=income-total;
 
-document.getElementById("budgetResult").style.display="block";
+let r=document.getElementById("budgetResult");
 
-document.getElementById("budgetResult").innerHTML=
+r.style.display="block";
 
+r.innerHTML=
 "<b>📊 Budget Summary</b><br><br>"+
-"Monthly Income: ₱"+income.toFixed(2)+
+"Monthly Income: ₱"+
+income.toFixed(2)+
 "<br>"+
-"Total Expenses: ₱"+total.toFixed(2)+
+"Total Expenses: ₱"+
+total.toFixed(2)+
 "<br><br>"+
 "<b>Remaining Money: ₱"+
 remaining.toFixed(2)+
@@ -1278,7 +1006,8 @@ saveHistory(
 
 function savingsCalc(){
 
-let goal=document.getElementById("goalName").value||
+let goal=
+document.getElementById("goalName").value||
 "My Savings Goal";
 
 let target=Number(
@@ -1298,7 +1027,6 @@ if(target<=0){
 alert("Enter your target amount.");
 
 return;
-
 }
 
 if(current<0){
@@ -1306,7 +1034,6 @@ if(current<0){
 alert("Enter your current savings.");
 
 return;
-
 }
 
 if(monthly<=0){
@@ -1314,19 +1041,28 @@ if(monthly<=0){
 alert("Enter your monthly savings.");
 
 return;
-
 }
+
+let remaining=Math.max(
+0,
+target-current
+);
 
 let progress=(current/target)*100;
 
-if(progress>100)progress=100;
+if(progress>100){
 
-if(progress<0)progress=0;
+progress=100;
 
-let remaining=target-current;
+}
 
+let months=Math.ceil(
+remaining/monthly
+);
 
-/* DASHBOARD SAVE */
+let years=Math.floor(months/12);
+
+let monthLeft=months%12;
 
 localStorage.setItem(
 "pinoySavings",
@@ -1340,109 +1076,76 @@ progress:progress
 
 showDashboard();
 
+let r=document.getElementById("savingsResult");
+
+r.style.display="block";
 
 if(remaining<=0){
 
-document.getElementById("savingsResult").style.display="block";
-
-document.getElementById("savingsResult").innerHTML=
-
+r.innerHTML=
 "<b>🎉 Goal Achieved!</b><br><br>"+
 "Goal: "+goal+
 "<br>"+
-"Target Amount: ₱"+target.toFixed(2)+
+"Target Amount: ₱"+
+target.toFixed(2)+
 "<br>"+
-"Current Savings: ₱"+current.toFixed(2)+
+"Current Savings: ₱"+
+current.toFixed(2)+
 "<br><br>"+
-
 "<div class='progress-box'>"+
-"<div class='progress-top'>"+
-"<span>Progress</span>"+
-"<span>100%</span>"+
-"</div>"+
-
+"Progress: 100%"+
 "<div class='progress-bar'>"+
 "<div class='progress-fill' style='width:100%'></div>"+
 "</div>"+
-
-"<div class='progress-percent'>"+
-"100% Complete 🎉"+
-"</div>"+
 "</div><br>"+
-
 "<b>You have reached your savings goal!</b>";
 
-saveHistory(
-"🎯 Savings Goal",
-goal+" → Goal achieved"
-);
+}else{
 
-return;
-
-}
-
-
-let months=Math.ceil(
-remaining/monthly
-);
-
-let years=Math.floor(
-months/12
-);
-
-let monthLeft=months%12;
-
-
-document.getElementById("savingsResult").style.display="block";
-
-document.getElementById("savingsResult").innerHTML=
-
+r.innerHTML=
 "<b>🎯 Savings Goal Summary</b><br><br>"+
-
 "Goal: "+goal+
 "<br>"+
-"Target Amount: ₱"+target.toFixed(2)+
+"Target Amount: ₱"+
+target.toFixed(2)+
 "<br>"+
-"Current Savings: ₱"+current.toFixed(2)+
+"Current Savings: ₱"+
+current.toFixed(2)+
 "<br>"+
-"Amount Remaining: ₱"+remaining.toFixed(2)+
+"Amount Remaining: ₱"+
+remaining.toFixed(2)+
 "<br>"+
-"Monthly Savings: ₱"+monthly.toFixed(2)+
+"Monthly Savings: ₱"+
+monthly.toFixed(2)+
 "<br><br>"+
-
 "<div class='progress-box'>"+
-
-"<div class='progress-top'>"+
-"<span>Progress</span>"+
-"<span>"+progress.toFixed(0)+"%</span>"+
-"</div>"+
-
+"<b>Progress</b>"+
 "<div class='progress-bar'>"+
-"<div class='progress-fill' style='width:"+progress+"%'></div>"+
+"<div class='progress-fill' style='width:"+
+progress+"%'></div>"+
 "</div>"+
-
-"<div class='progress-percent'>"+
+"<center><b>"+
 progress.toFixed(0)+
-"% Complete 🎯"+
-"</div>"+
-
+"% Complete 🎯</b></center>"+
 "</div><br>"+
-
 "<b>Estimated Time: "+
 months+
 " month(s)</b><br>"+
-
 "Approximately: "+
 years+
 " year(s) and "+
 monthLeft+
 " month(s)"+
-
 "<div class='tip'>💡 Stay consistent with your monthly savings.</div>";
+
+}
 
 saveHistory(
 "🎯 Savings Goal",
-goal+" → "+months+" month(s)"
+goal+" → "+
+(remaining<=0?
+"Goal achieved":
+months+" month(s)")
 );
 
 }
@@ -1453,80 +1156,56 @@ goal+" → "+months+" month(s)"
 function showDashboard(){
 
 let data=JSON.parse(
-localStorage.getItem("pinoySavings")||"null"
+localStorage.getItem("pinoySavings")||
+"null"
 );
-
-let goal=document.getElementById("dashGoal");
-let target=document.getElementById("dashTarget");
-let fill=document.getElementById("dashFill");
-let percent=document.getElementById("dashPercent");
-let name=document.getElementById("dashGoalName");
 
 if(!data){
 
-goal.innerText="₱0.00";
-target.innerText="₱0.00";
-fill.style.width="0%";
-percent.innerText="0% of your goal";
-name.innerText="No savings goal yet.";
+document.getElementById("dashCurrent").innerText=
+"₱0.00";
+
+document.getElementById("dashTarget").innerText=
+"₱0.00";
+
+document.getElementById("dashFill").style.width=
+"0%";
+
+document.getElementById("dashPercent").innerText=
+"0% of your goal";
+
+document.getElementById("dashName").innerText=
+"No savings goal yet.";
 
 return;
-
 }
 
-goal.innerText=
+document.getElementById("dashCurrent").innerText=
 "₱"+Number(data.current).toFixed(2);
 
-target.innerText=
+document.getElementById("dashTarget").innerText=
 "₱"+Number(data.target).toFixed(2);
 
-fill.style.width=
+document.getElementById("dashFill").style.width=
 Number(data.progress)+"%";
 
-percent.innerText=
+document.getElementById("dashPercent").innerText=
 Number(data.progress).toFixed(0)+
 "% of your goal";
 
-name.innerText=
+document.getElementById("dashName").innerText=
 "🎯 Goal: "+data.goal;
 
 }
 
 
-/* CLEAR BUTTONS */
+/* CLEAR */
 
-function clearSalary(){
+function clearBox(input,result){
 
-document.getElementById("salaryInput").value="";
+document.getElementById(input).value="";
 
-document.getElementById("salaryResult").style.display="none";
-
-}
-
-
-function clearBIR(){
-
-document.getElementById("birInput").value="";
-
-document.getElementById("birResult").style.display="none";
-
-}
-
-
-function clearSSS(){
-
-document.getElementById("sssInput").value="";
-
-document.getElementById("sssResult").style.display="none";
-
-}
-
-
-function clearPagibig(){
-
-document.getElementById("pagibigInput").value="";
-
-document.getElementById("pagibigResult").style.display="none";
+document.getElementById(result).style.display="none";
 
 }
 
@@ -1576,7 +1255,6 @@ document.getElementById("savingsResult").style.display="none";
 /* START */
 
 showHistory();
-
 showDashboard();
 
 </script>
