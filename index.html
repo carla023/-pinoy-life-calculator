@@ -16,7 +16,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 .calcbtn{width:100%;background:#00A898;color:white}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
 .result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
-#salary,#bir,#sss,#pagibig,#budget{display:none;text-align:left}
+#salary,#bir,#sss,#pagibig,#budget,#savings{display:none;text-align:left}
 </style>
 </head>
 
@@ -52,7 +52,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 <span class="icon">📊</span>Budget Planner
 </button>
 
-<button onclick="alert('Savings Goal coming soon!')">
+<button onclick="openPage('savings')">
 <span class="icon">🎯</span>Savings Goal
 </button>
 
@@ -161,6 +161,30 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 </main>
 
+<main id="savings">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2>🎯 Savings Goal</h2>
+
+<label>Goal Name</label>
+<input id="goalName" type="text" placeholder="Example: New Phone">
+
+<label>Target Amount</label>
+<input id="target" type="number" placeholder="Example: 20000">
+
+<label>Current Savings</label>
+<input id="current" type="number" placeholder="Example: 5000">
+
+<label>Monthly Savings</label>
+<input id="monthly" type="number" placeholder="Example: 2000">
+
+<button class="calcbtn" onclick="savingsCalc()">Calculate Goal</button>
+
+<div id="savingsResult" class="result" style="display:none"></div>
+
+</main>
+
 <script>
 
 function openPage(page){
@@ -170,6 +194,7 @@ document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
 document.getElementById("pagibig").style.display="none";
 document.getElementById("budget").style.display="none";
+document.getElementById("savings").style.display="none";
 document.getElementById(page).style.display="block";
 }
 
@@ -179,6 +204,7 @@ document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
 document.getElementById("pagibig").style.display="none";
 document.getElementById("budget").style.display="none";
+document.getElementById("savings").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
@@ -321,6 +347,61 @@ document.getElementById("budgetResult").innerHTML=
 "Total Expenses: ₱"+total.toFixed(2)+"<br><br>"+
 "<b>Remaining Money: ₱"+remaining.toFixed(2)+"</b><br><br>"+
 "💡 Tip: Consider saving part of your remaining money.";
+}
+
+function savingsCalc(){
+
+let goal=document.getElementById("goalName").value;
+let target=Number(document.getElementById("target").value);
+let current=Number(document.getElementById("current").value);
+let monthly=Number(document.getElementById("monthly").value);
+
+if(target<=0){
+alert("Enter your target amount.");
+return;
+}
+
+if(current<0){
+alert("Enter your current savings.");
+return;
+}
+
+if(monthly<=0){
+alert("Enter your monthly savings.");
+return;
+}
+
+let remaining=target-current;
+
+if(remaining<=0){
+
+document.getElementById("savingsResult").style.display="block";
+
+document.getElementById("savingsResult").innerHTML=
+"<b>🎉 Goal Achieved!</b><br><br>"+
+"Goal: "+goal+"<br>"+
+"Target Amount: ₱"+target.toFixed(2)+"<br>"+
+"Current Savings: ₱"+current.toFixed(2)+"<br><br>"+
+"<b>You have already reached your savings goal!</b>";
+
+return;
+}
+
+let months=Math.ceil(remaining/monthly);
+let years=Math.floor(months/12);
+let monthLeft=months%12;
+
+document.getElementById("savingsResult").style.display="block";
+
+document.getElementById("savingsResult").innerHTML=
+"<b>🎯 Savings Goal Summary</b><br><br>"+
+"Goal: "+goal+"<br>"+
+"Target Amount: ₱"+target.toFixed(2)+"<br>"+
+"Current Savings: ₱"+current.toFixed(2)+"<br>"+
+"Amount Remaining: ₱"+remaining.toFixed(2)+"<br>"+
+"Monthly Savings: ₱"+monthly.toFixed(2)+"<br><br>"+
+"<b>Estimated Time: "+months+" month(s)</b><br>"+
+"Approximately: "+years+" year(s) and "+monthLeft+" month(s)";
 }
 
 </script>
