@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pinoy Life Calculator</title>
+
 <style>
 body{font-family:Arial;margin:0;background:#f5fbff;color:#333;text-align:center}
 header{background:#00A898;color:white;padding:25px 15px;border-radius:0 0 25px 25px}
@@ -15,7 +16,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 .calcbtn{width:100%;background:#00A898;color:white}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
 .result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
-#salary,#bir,#sss{display:none;text-align:left}
+#salary,#bir,#sss,#pagibig{display:none;text-align:left}
 </style>
 </head>
 
@@ -43,7 +44,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 <span class="icon">🏦</span>SSS Calculator
 </button>
 
-<button onclick="alert('Pag-IBIG Calculator coming soon!')">
+<button onclick="openPage('pagibig')">
 <span class="icon">🏠</span>Pag-IBIG
 </button>
 
@@ -103,6 +104,21 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 </main>
 
+<main id="pagibig">
+
+<button class="back" onclick="home()">← Back</button>
+
+<h2>🏠 Pag-IBIG Calculator</h2>
+
+<label>Monthly Salary</label>
+<input id="pagibigInput" type="number" placeholder="Example: 20000">
+
+<button class="calcbtn" onclick="pagibigCalc()">Calculate</button>
+
+<div id="pagibigResult" class="result" style="display:none"></div>
+
+</main>
+
 <script>
 
 function openPage(page){
@@ -110,6 +126,7 @@ document.getElementById("home").style.display="none";
 document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
+document.getElementById("pagibig").style.display="none";
 document.getElementById(page).style.display="block";
 }
 
@@ -117,6 +134,7 @@ function home(){
 document.getElementById("salary").style.display="none";
 document.getElementById("bir").style.display="none";
 document.getElementById("sss").style.display="none";
+document.getElementById("pagibig").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
@@ -197,6 +215,33 @@ document.getElementById("sssResult").innerHTML=
 "<b>Estimated SSS Contribution</b><br><br>"+
 "Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
 "Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
+"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
+"Note: Estimated amount only.";
+}
+
+function pagibigCalc(){
+
+let s=Number(document.getElementById("pagibigInput").value);
+
+if(s<=0){alert("Enter your salary.");return}
+
+let employee;
+
+if(s<=1500){
+employee=s*.01;
+}else{
+employee=s*.02;
+}
+
+if(employee>100){
+employee=100;
+}
+
+document.getElementById("pagibigResult").style.display="block";
+
+document.getElementById("pagibigResult").innerHTML=
+"<b>Estimated Pag-IBIG Contribution</b><br><br>"+
+"Monthly Salary: ₱"+s.toFixed(2)+"<br><br>"+
 "<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
 "Note: Estimated amount only.";
 }
