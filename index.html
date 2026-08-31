@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html>
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pinoy Life Calculator</title>
-
 <style>
-
-* {
-
-    box-sizing: border-box;
-
-}
-
-body {
-
-    margin: 0;
-
-    font-family: Arial, sans-serif;
-
-    background: #f5fbff;
-
-    color: #333;
-
-}
-
-.header {
-
-    background: linear-gradient(135deg, #00A898, #58c9ff);
-
-    color: white;
-
-    padding: 28px 20px;
-
-    border-radius: 0 0 25px 25px;
+body{font-family:Arial;margin:0;background:#f5fbff;text-align:center}
+header{background:#00A898;color:white;padding:30px 15px;border-radius:0 0 25px 25px}
+h1{margin:0;font-size:26px}
+p{font-size:14px}
+main{padding:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+button{background:white;border:0;border-radius:18px;padding:25px 8px;font-size:15px;box-shadow:0 3px 10px #ccc}
+.icon{font-size:30px;display:block;margin-bottom:8px}
+footer{padding:25px;color:#777;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>🇵🇭 Pinoy Life Calculator</h1>
+<p>Simple financial tools for Filipinos</p>
+</header>
+<main>
+<h2>💰 Financial Tools</h2>
+<div class="grid">
+<button onclick="alert('Salary Calculator')"><span class="icon">💰</span>Salary Calculator</button>
+<button onclick="alert('BIR Tax Calculator')"><span class="icon">🧾</span>BIR Tax</button>
+<button onclick="alert('SSS Calculator')"><span class="icon">🏦</span>SSS Calculator</button>
+<button onclick="alert('Pag-IBIG Calculator')"><span class="icon">🏠</span>Pag-IBIG</button>
+<button onclick="alert('Budget Planner')"><span class="icon">📊</span>Budget Planner</button>
+<button onclick="alert('Savings Goal')"><span class="icon">🎯</span>Savings Goal</button>
+</div>
+</main>
+<footer>🇵🇭 Pinoy Life Calculator<br>Simple • Filipino • Free</footer>
+</body>
+</html>
