@@ -161,7 +161,7 @@ box-shadow:0 5px 12px rgba(0,168,152,.25);
 
 .clearbtn{
 width:100%;
-background:#fff;
+background:white;
 color:#008f82;
 border:2px solid #00A898;
 border-radius:14px;
@@ -210,6 +210,58 @@ line-height:1.7;
 color:#607d8b;
 }
 
+.history{
+background:white;
+border-radius:20px;
+padding:20px;
+margin-top:25px;
+box-shadow:0 5px 16px rgba(0,0,0,.06);
+}
+
+.history h3{
+margin-top:0;
+color:#008f82;
+}
+
+.history-item{
+border-bottom:1px solid #edf2f2;
+padding:12px 0;
+font-size:13px;
+line-height:1.6;
+}
+
+.history-item:last-child{
+border-bottom:0;
+}
+
+.history-type{
+font-weight:700;
+color:#008f82;
+}
+
+.history-date{
+font-size:11px;
+color:#90a4ae;
+}
+
+.history-clear{
+width:100%;
+background:#fff;
+color:#e57373;
+border:1px solid #e57373;
+border-radius:12px;
+padding:12px;
+font-weight:700;
+margin-top:12px;
+}
+
+.empty-history{
+font-size:13px;
+color:#90a4ae;
+text-align:center;
+padding:10px 0;
+}
+
 .footer{
 text-align:center;
 font-size:12px;
@@ -221,6 +273,17 @@ padding:25px 10px;
 display:none;
 text-align:left;
 }
+
+@media(max-width:380px){
+.grid{
+gap:10px;
+}
+
+.tool{
+padding:18px 7px;
+font-size:14px;
+}
+}
 </style>
 </head>
 
@@ -231,6 +294,9 @@ text-align:left;
 <h1>Pinoy Life Calculator</h1>
 <p>Simple financial tools for Filipinos</p>
 </header>
+
+
+<!-- HOME -->
 
 <main id="home">
 
@@ -279,7 +345,26 @@ Savings Goal
 
 </div>
 
+
+<!-- HISTORY -->
+
+<div class="history">
+
+<h3>📋 Recent Calculations</h3>
+
+<div id="historyList"></div>
+
+<button class="history-clear" onclick="clearHistory()">
+🗑️ Clear History
+</button>
+
+</div>
+
+
+<!-- ABOUT -->
+
 <div class="about">
+
 <h3>🇵🇭 About Pinoy Life Calculator</h3>
 
 <p>
@@ -298,7 +383,9 @@ government contributions, budget, and savings goals.
 <strong>Note:</strong> Calculations are estimates
 for planning purposes only.
 </p>
+
 </div>
+
 
 <div class="footer">
 🇵🇭 Made for everyday Filipino money planning
@@ -321,9 +408,13 @@ for planning purposes only.
 <label>Monthly Basic Salary</label>
 <input id="salaryInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="salaryCalc()">Calculate Salary</button>
+<button class="calcbtn" onclick="salaryCalc()">
+Calculate Salary
+</button>
 
-<button class="clearbtn" onclick="clearSalary()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearSalary()">
+🔄 Clear
+</button>
 
 <div id="salaryResult" class="result" style="display:none"></div>
 
@@ -344,9 +435,13 @@ for planning purposes only.
 <label>Monthly Taxable Income</label>
 <input id="birInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="birCalc()">Calculate Tax</button>
+<button class="calcbtn" onclick="birCalc()">
+Calculate Tax
+</button>
 
-<button class="clearbtn" onclick="clearBIR()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearBIR()">
+🔄 Clear
+</button>
 
 <div id="birResult" class="result" style="display:none"></div>
 
@@ -367,9 +462,13 @@ for planning purposes only.
 <label>Monthly Salary</label>
 <input id="sssInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="sssCalc()">Calculate SSS</button>
+<button class="calcbtn" onclick="sssCalc()">
+Calculate SSS
+</button>
 
-<button class="clearbtn" onclick="clearSSS()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearSSS()">
+🔄 Clear
+</button>
 
 <div id="sssResult" class="result" style="display:none"></div>
 
@@ -390,9 +489,13 @@ for planning purposes only.
 <label>Monthly Salary</label>
 <input id="pagibigInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="pagibigCalc()">Calculate Pag-IBIG</button>
+<button class="calcbtn" onclick="pagibigCalc()">
+Calculate Pag-IBIG
+</button>
 
-<button class="clearbtn" onclick="clearPagibig()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearPagibig()">
+🔄 Clear
+</button>
 
 <div id="pagibigResult" class="result" style="display:none"></div>
 
@@ -440,9 +543,13 @@ for planning purposes only.
 <label>🛍️ Other Expenses</label>
 <input id="other" type="number" placeholder="₱">
 
-<button class="calcbtn" onclick="budgetCalc()">Calculate Budget</button>
+<button class="calcbtn" onclick="budgetCalc()">
+Calculate Budget
+</button>
 
-<button class="clearbtn" onclick="clearBudget()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearBudget()">
+🔄 Clear
+</button>
 
 <div id="budgetResult" class="result" style="display:none"></div>
 
@@ -472,9 +579,13 @@ for planning purposes only.
 <label>Monthly Savings</label>
 <input id="monthly" type="number" placeholder="Example: 1000">
 
-<button class="calcbtn" onclick="savingsCalc()">Calculate Goal</button>
+<button class="calcbtn" onclick="savingsCalc()">
+Calculate Goal
+</button>
 
-<button class="clearbtn" onclick="clearSavings()">🔄 Clear</button>
+<button class="clearbtn" onclick="clearSavings()">
+🔄 Clear
+</button>
 
 <div id="savingsResult" class="result" style="display:none"></div>
 
@@ -482,6 +593,8 @@ for planning purposes only.
 
 
 <script>
+
+/* PAGE NAVIGATION */
 
 function openPage(page){
 
@@ -510,9 +623,81 @@ document.getElementById("savings").style.display="none";
 
 document.getElementById("home").style.display="block";
 
+showHistory();
+
 window.scrollTo(0,0);
 }
 
+
+/* HISTORY */
+
+function saveHistory(type,text){
+
+let history=JSON.parse(
+localStorage.getItem("pinoyHistory")||"[]"
+);
+
+history.unshift({
+type:type,
+text:text,
+date:new Date().toLocaleString()
+});
+
+if(history.length>10){
+history=history.slice(0,10);
+}
+
+localStorage.setItem(
+"pinoyHistory",
+JSON.stringify(history)
+);
+
+showHistory();
+}
+
+
+function showHistory(){
+
+let list=document.getElementById("historyList");
+
+if(!list)return;
+
+let history=JSON.parse(
+localStorage.getItem("pinoyHistory")||"[]"
+);
+
+if(history.length===0){
+
+list.innerHTML=
+"<div class='empty-history'>No calculations yet.</div>";
+
+return;
+}
+
+list.innerHTML=history.map(function(item){
+
+return `
+<div class="history-item">
+<div class="history-type">${item.type}</div>
+<div>${item.text}</div>
+<div class="history-date">${item.date}</div>
+</div>
+`;
+
+}).join("");
+}
+
+
+function clearHistory(){
+
+localStorage.removeItem("pinoyHistory");
+
+showHistory();
+
+}
+
+
+/* SSS */
 
 function sssAmount(s){
 
@@ -525,9 +710,13 @@ return m*0.05;
 }
 
 
+/* SALARY */
+
 function salaryCalc(){
 
-let s=Number(document.getElementById("salaryInput").value);
+let s=Number(
+document.getElementById("salaryInput").value
+);
 
 if(s<=0){
 alert("Enter your salary.");
@@ -538,15 +727,30 @@ let a=sssAmount(s);
 let p=s*.025;
 let pg=Math.min(s*.02,100);
 
-let taxable=Math.max(0,s-a-p-pg);
+let taxable=Math.max(
+0,
+s-a-p-pg
+);
+
 let tax=0;
 
-if(taxable<=20833)tax=0;
-else if(taxable<=33333)tax=(taxable-20833)*.15;
-else if(taxable<=66667)tax=1875+(taxable-33333)*.20;
-else if(taxable<=166667)tax=8541.80+(taxable-66667)*.25;
-else if(taxable<=666667)tax=33541.80+(taxable-166667)*.30;
-else tax=183541.80+(taxable-666667)*.35;
+if(taxable<=20833)
+tax=0;
+
+else if(taxable<=33333)
+tax=(taxable-20833)*.15;
+
+else if(taxable<=66667)
+tax=1875+(taxable-33333)*.20;
+
+else if(taxable<=166667)
+tax=8541.80+(taxable-66667)*.25;
+
+else if(taxable<=666667)
+tax=33541.80+(taxable-166667)*.30;
+
+else
+tax=183541.80+(taxable-666667)*.35;
 
 let total=a+p+pg+tax;
 let net=s-total;
@@ -554,20 +758,34 @@ let net=s-total;
 document.getElementById("salaryResult").style.display="block";
 
 document.getElementById("salaryResult").innerHTML=
+
 "<b>Estimated Deductions</b><br><br>"+
 "SSS: ₱"+a.toFixed(2)+"<br>"+
 "PhilHealth: ₱"+p.toFixed(2)+"<br>"+
 "Pag-IBIG: ₱"+pg.toFixed(2)+"<br>"+
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
-"<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
-"<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>"+
+"<b>Total Deductions: ₱"+
+total.toFixed(2)+
+"</b><br><br>"+
+"<b>Estimated Take-home Pay: ₱"+
+net.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
+
+saveHistory(
+"💰 Salary Calculator",
+"Salary ₱"+s.toFixed(2)+" → Take-home ₱"+net.toFixed(2)
+);
 }
 
 
+/* BIR */
+
 function birCalc(){
 
-let income=Number(document.getElementById("birInput").value);
+let income=Number(
+document.getElementById("birInput").value
+);
 
 if(income<=0){
 alert("Enter your income.");
@@ -576,26 +794,51 @@ return;
 
 let tax=0;
 
-if(income<=20833)tax=0;
-else if(income<=33333)tax=(income-20833)*.15;
-else if(income<=66667)tax=1875+(income-33333)*.20;
-else if(income<=166667)tax=8541.80+(income-66667)*.25;
-else if(income<=666667)tax=33541.80+(income-166667)*.30;
-else tax=183541.80+(income-666667)*.35;
+if(income<=20833)
+tax=0;
+
+else if(income<=33333)
+tax=(income-20833)*.15;
+
+else if(income<=66667)
+tax=1875+(income-33333)*.20;
+
+else if(income<=166667)
+tax=8541.80+(income-66667)*.25;
+
+else if(income<=666667)
+tax=33541.80+(income-166667)*.30;
+
+else
+tax=183541.80+(income-666667)*.35;
 
 document.getElementById("birResult").style.display="block";
 
 document.getElementById("birResult").innerHTML=
+
 "<b>Estimated Monthly BIR Tax</b><br><br>"+
-"Taxable Income: ₱"+income.toFixed(2)+"<br><br>"+
-"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>"+
+"Taxable Income: ₱"+
+income.toFixed(2)+
+"<br><br>"+
+"<b>Estimated Tax: ₱"+
+tax.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
+
+saveHistory(
+"🧾 BIR Tax",
+"Income ₱"+income.toFixed(2)+" → Tax ₱"+tax.toFixed(2)
+);
 }
 
 
+/* SSS */
+
 function sssCalc(){
 
-let s=Number(document.getElementById("sssInput").value);
+let s=Number(
+document.getElementById("sssInput").value
+);
 
 if(s<=0){
 alert("Enter your salary.");
@@ -612,17 +855,33 @@ let employee=m*.05;
 document.getElementById("sssResult").style.display="block";
 
 document.getElementById("sssResult").innerHTML=
+
 "<b>Estimated SSS Contribution</b><br><br>"+
-"Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
-"Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
-"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
+"Monthly Salary: ₱"+
+s.toFixed(2)+
+"<br>"+
+"Monthly Salary Credit: ₱"+
+m.toFixed(2)+
+"<br><br>"+
+"<b>Employee Contribution: ₱"+
+employee.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
+
+saveHistory(
+"🏦 SSS Calculator",
+"Salary ₱"+s.toFixed(2)+" → Contribution ₱"+employee.toFixed(2)
+);
 }
 
 
+/* PAG-IBIG */
+
 function pagibigCalc(){
 
-let s=Number(document.getElementById("pagibigInput").value);
+let s=Number(
+document.getElementById("pagibigInput").value
+);
 
 if(s<=0){
 alert("Enter your salary.");
@@ -642,16 +901,30 @@ employee=100;
 document.getElementById("pagibigResult").style.display="block";
 
 document.getElementById("pagibigResult").innerHTML=
+
 "<b>Estimated Pag-IBIG Contribution</b><br><br>"+
-"Monthly Salary: ₱"+s.toFixed(2)+"<br><br>"+
-"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
+"Monthly Salary: ₱"+
+s.toFixed(2)+
+"<br><br>"+
+"<b>Employee Contribution: ₱"+
+employee.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Estimated amount only.</div>";
+
+saveHistory(
+"🏠 Pag-IBIG",
+"Salary ₱"+s.toFixed(2)+" → Contribution ₱"+employee.toFixed(2)
+);
 }
 
 
+/* BUDGET */
+
 function budgetCalc(){
 
-let income=Number(document.getElementById("budgetIncome").value);
+let income=Number(
+document.getElementById("budgetIncome").value
+);
 
 if(income<=0){
 alert("Enter your monthly income.");
@@ -684,23 +957,44 @@ let remaining=income-total;
 document.getElementById("budgetResult").style.display="block";
 
 document.getElementById("budgetResult").innerHTML=
+
 "<b>📊 Budget Summary</b><br><br>"+
-"Monthly Income: ₱"+income.toFixed(2)+"<br>"+
-"Total Expenses: ₱"+total.toFixed(2)+"<br><br>"+
-"<b>Remaining Money: ₱"+remaining.toFixed(2)+"</b>"+
+"Monthly Income: ₱"+
+income.toFixed(2)+
+"<br>"+
+"Total Expenses: ₱"+
+total.toFixed(2)+
+"<br><br>"+
+"<b>Remaining Money: ₱"+
+remaining.toFixed(2)+
+"</b>"+
 "<div class='tip'>💡 Consider saving part of your remaining money.</div>";
+
+saveHistory(
+"📊 Budget Planner",
+"Income ₱"+income.toFixed(2)+" → Remaining ₱"+remaining.toFixed(2)
+);
 }
 
 
+/* SAVINGS */
+
 function savingsCalc(){
 
-let goal=document.getElementById("goalName").value||"My Savings Goal";
+let goal=
+document.getElementById("goalName").value||
+"My Savings Goal";
 
-let target=Number(document.getElementById("target").value);
+let target=Number(
+document.getElementById("target").value
+);
 
-let current=Number(document.getElementById("current").value)||0;
+let current=
+Number(document.getElementById("current").value)||0;
 
-let monthly=Number(document.getElementById("monthly").value);
+let monthly=Number(
+document.getElementById("monthly").value
+);
 
 if(target<=0){
 alert("Enter your target amount.");
@@ -724,57 +1018,105 @@ if(remaining<=0){
 document.getElementById("savingsResult").style.display="block";
 
 document.getElementById("savingsResult").innerHTML=
+
 "<b>🎉 Goal Achieved!</b><br><br>"+
-"Goal: "+goal+"<br>"+
-"Target Amount: ₱"+target.toFixed(2)+"<br>"+
-"Current Savings: ₱"+current.toFixed(2)+"<br><br>"+
+"Goal: "+goal+
+"<br>"+
+"Target Amount: ₱"+
+target.toFixed(2)+
+"<br>"+
+"Current Savings: ₱"+
+current.toFixed(2)+
+"<br><br>"+
 "<b>You have already reached your savings goal!</b>";
+
+saveHistory(
+"🎯 Savings Goal",
+goal+" → Goal achieved"
+);
 
 return;
 }
 
-let months=Math.ceil(remaining/monthly);
+let months=Math.ceil(
+remaining/monthly
+);
 
-let years=Math.floor(months/12);
+let years=Math.floor(
+months/12
+);
 
 let monthLeft=months%12;
 
 document.getElementById("savingsResult").style.display="block";
 
 document.getElementById("savingsResult").innerHTML=
+
 "<b>🎯 Savings Goal Summary</b><br><br>"+
-"Goal: "+goal+"<br>"+
-"Target Amount: ₱"+target.toFixed(2)+"<br>"+
-"Current Savings: ₱"+current.toFixed(2)+"<br>"+
-"Amount Remaining: ₱"+remaining.toFixed(2)+"<br>"+
-"Monthly Savings: ₱"+monthly.toFixed(2)+"<br><br>"+
-"<b>Estimated Time: "+months+" month(s)</b><br>"+
-"Approximately: "+years+" year(s) and "+monthLeft+" month(s)"+
+"Goal: "+goal+
+"<br>"+
+"Target Amount: ₱"+
+target.toFixed(2)+
+"<br>"+
+"Current Savings: ₱"+
+current.toFixed(2)+
+"<br>"+
+"Amount Remaining: ₱"+
+remaining.toFixed(2)+
+"<br>"+
+"Monthly Savings: ₱"+
+monthly.toFixed(2)+
+"<br><br>"+
+"<b>Estimated Time: "+
+months+
+" month(s)</b><br>"+
+"Approximately: "+
+years+
+" year(s) and "+
+monthLeft+
+" month(s)"+
 "<div class='tip'>💡 Stay consistent with your monthly savings.</div>";
+
+saveHistory(
+"🎯 Savings Goal",
+goal+" → "+months+" month(s)"
+);
 }
 
 
 /* CLEAR FUNCTIONS */
 
 function clearSalary(){
+
 document.getElementById("salaryInput").value="";
+
 document.getElementById("salaryResult").style.display="none";
 }
 
+
 function clearBIR(){
+
 document.getElementById("birInput").value="";
+
 document.getElementById("birResult").style.display="none";
 }
 
+
 function clearSSS(){
+
 document.getElementById("sssInput").value="";
+
 document.getElementById("sssResult").style.display="none";
 }
 
+
 function clearPagibig(){
+
 document.getElementById("pagibigInput").value="";
+
 document.getElementById("pagibigResult").style.display="none";
 }
+
 
 function clearBudget(){
 
@@ -798,6 +1140,7 @@ document.getElementById(id).value="";
 document.getElementById("budgetResult").style.display="none";
 }
 
+
 function clearSavings(){
 
 let ids=[
@@ -813,6 +1156,11 @@ document.getElementById(id).value="";
 
 document.getElementById("savingsResult").style.display="none";
 }
+
+
+/* LOAD HISTORY */
+
+showHistory();
 
 </script>
 
