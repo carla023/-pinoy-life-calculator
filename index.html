@@ -14,11 +14,10 @@ button{background:white;border:0;border-radius:18px;padding:20px 8px;font-size:1
 #calc{display:none;text-align:left}
 input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:18px;margin:8px 0 15px}
 .calcbtn{width:100%;background:#00A898;color:white}
-.result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;font-size:16px}
 .back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
+.result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;font-size:16px}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -28,7 +27,6 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 <main id="home">
 <h2>💰 Financial Tools</h2>
-
 <div class="grid">
 
 <button onclick="showCalc()">
@@ -74,6 +72,7 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 </main>
 
 <script>
+
 function showCalc(){
 document.getElementById("home").style.display="none";
 document.getElementById("calc").style.display="block";
@@ -84,7 +83,16 @@ document.getElementById("calc").style.display="none";
 document.getElementById("home").style.display="block";
 }
 
+function sssContribution(salary){
+
+let msc=Math.max(5000,Math.min(35000,Math.ceil(salary/500)*500));
+
+return msc*0.05;
+
+}
+
 function calculate(){
+
 let s=Number(document.getElementById("salary").value);
 
 if(s<=0){
@@ -92,20 +100,36 @@ alert("Please enter your monthly salary.");
 return;
 }
 
-let sss=s*0.075;
+let sss=sssContribution(s);
+
 let phil=s*0.025;
+
 let pagibig=Math.min(s*0.02,100);
+
 let taxable=Math.max(0,s-sss-phil-pagibig);
+
 let tax=0;
 
-if(taxable<=20833) tax=0;
-else if(taxable<=33333) tax=(taxable-20833)*0.15;
-else if(taxable<=66667) tax=1875+(taxable-33333)*0.20;
-else if(taxable<=166667) tax=8541.80+(taxable-66667)*0.25;
-else if(taxable<=666667) tax=33541.80+(taxable-166667)*0.30;
-else tax=183541.80+(taxable-666667)*0.35;
+if(taxable<=20833)
+tax=0;
+
+else if(taxable<=33333)
+tax=(taxable-20833)*0.15;
+
+else if(taxable<=66667)
+tax=1875+(taxable-33333)*0.20;
+
+else if(taxable<=166667)
+tax=8541.80+(taxable-66667)*0.25;
+
+else if(taxable<=666667)
+tax=33541.80+(taxable-166667)*0.30;
+
+else
+tax=183541.80+(taxable-666667)*0.35;
 
 let total=sss+phil+pagibig+tax;
+
 let net=s-total;
 
 document.getElementById("result").style.display="block";
@@ -118,7 +142,9 @@ document.getElementById("result").innerHTML=
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
 "<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
 "<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>";
+
 }
+
 </script>
 
 </body>
