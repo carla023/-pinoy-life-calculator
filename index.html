@@ -5,125 +5,354 @@
 <title>Pinoy Life Calculator</title>
 
 <style>
-body{font-family:Arial;margin:0;background:#f5fbff;color:#333;text-align:center}
-header{background:#00A898;color:white;padding:25px 15px;border-radius:0 0 25px 25px}
-h1{margin:0;font-size:25px}
-main{padding:20px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button{background:white;border:0;border-radius:18px;padding:20px 8px;font-size:15px;box-shadow:0 3px 10px #ccc}
-.icon{font-size:30px;display:block;margin-bottom:7px}
-input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:18px;margin:8px 0 15px}
-.calcbtn{width:100%;background:#00A898;color:white}
-.back{background:#58c9ff;color:white;width:100%;margin-bottom:15px}
-.result{background:#fff4c7;padding:18px;border-radius:15px;margin-top:15px;text-align:left}
-#salary,#bir,#sss,#pagibig,#budget,#savings{display:none;text-align:left}
+*{
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4fbfa;
+color:#263238;
+}
+
+header{
+background:linear-gradient(135deg,#00A898,#008f82);
+color:white;
+padding:32px 20px 28px;
+border-radius:0 0 30px 30px;
+text-align:center;
+box-shadow:0 5px 18px rgba(0,168,152,.25);
+}
+
+.logo{
+font-size:42px;
+margin-bottom:8px;
+}
+
+h1{
+margin:0;
+font-size:26px;
+font-weight:800;
+}
+
+header p{
+margin:8px 0 0;
+font-size:14px;
+opacity:.95;
+}
+
+main{
+padding:22px 18px;
+max-width:600px;
+margin:auto;
+}
+
+.home-title{
+text-align:center;
+margin:5px 0 20px;
+}
+
+.home-title h2{
+margin:0;
+font-size:22px;
+}
+
+.home-title p{
+font-size:14px;
+color:#78909c;
+margin-top:7px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.tool{
+background:white;
+border:1px solid #e6eeee;
+border-radius:20px;
+padding:22px 10px;
+font-size:15px;
+font-weight:700;
+color:#263238;
+box-shadow:0 5px 16px rgba(0,0,0,.07);
+transition:.2s;
+}
+
+.tool:active{
+transform:scale(.96);
+}
+
+.icon{
+font-size:34px;
+display:block;
+margin-bottom:10px;
+}
+
+.tool small{
+display:block;
+font-size:11px;
+font-weight:normal;
+color:#90a4ae;
+margin-top:5px;
+}
+
+.back{
+width:100%;
+background:#e0f7f4;
+color:#008f82;
+border:0;
+border-radius:14px;
+padding:14px;
+font-size:15px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.page-title{
+margin-bottom:20px;
+}
+
+.page-title h2{
+margin:0;
+font-size:23px;
+}
+
+.page-title p{
+color:#78909c;
+font-size:13px;
+margin-top:6px;
+}
+
+label{
+display:block;
+font-weight:700;
+font-size:14px;
+margin-top:14px;
+}
+
+input{
+width:100%;
+padding:15px;
+border:1px solid #d9e5e3;
+border-radius:12px;
+font-size:17px;
+margin-top:7px;
+outline:none;
+background:white;
+}
+
+input:focus{
+border-color:#00A898;
+box-shadow:0 0 0 3px rgba(0,168,152,.10);
+}
+
+.calcbtn{
+width:100%;
+background:#00A898;
+color:white;
+border:0;
+border-radius:14px;
+padding:16px;
+font-size:16px;
+font-weight:700;
+margin-top:15px;
+box-shadow:0 5px 12px rgba(0,168,152,.25);
+}
+
+.result{
+background:white;
+border-left:5px solid #FFC00E;
+padding:19px;
+border-radius:15px;
+margin-top:18px;
+line-height:1.8;
+box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+.tip{
+background:#fff8dc;
+padding:12px;
+border-radius:10px;
+margin-top:12px;
+font-size:13px;
+color:#795548;
+}
+
+#salary,#bir,#sss,#pagibig,#budget,#savings{
+display:none;
+text-align:left;
+}
+
+.footer{
+text-align:center;
+font-size:12px;
+color:#90a4ae;
+padding:25px 10px;
+}
+
+@media(max-width:380px){
+.grid{
+gap:10px;
+}
+
+.tool{
+padding:18px 7px;
+font-size:14px;
+}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>🇵🇭 Pinoy Life Calculator</h1>
+<div class="logo">🇵🇭</div>
+<h1>Pinoy Life Calculator</h1>
 <p>Simple financial tools for Filipinos</p>
 </header>
 
 <main id="home">
+
+<div class="home-title">
 <h2>💰 Financial Tools</h2>
+<p>Plan your money smarter, one calculation at a time.</p>
+</div>
 
 <div class="grid">
 
-<button onclick="openPage('salary')">
-<span class="icon">💰</span>Salary Calculator
+<button class="tool" onclick="openPage('salary')">
+<span class="icon">💰</span>
+Salary Calculator
+<small>Estimate take-home pay</small>
 </button>
 
-<button onclick="openPage('bir')">
-<span class="icon">🧾</span>BIR Tax
+<button class="tool" onclick="openPage('bir')">
+<span class="icon">🧾</span>
+BIR Tax
+<small>Estimate income tax</small>
 </button>
 
-<button onclick="openPage('sss')">
-<span class="icon">🏦</span>SSS Calculator
+<button class="tool" onclick="openPage('sss')">
+<span class="icon">🏦</span>
+SSS Calculator
+<small>Estimate contribution</small>
 </button>
 
-<button onclick="openPage('pagibig')">
-<span class="icon">🏠</span>Pag-IBIG
+<button class="tool" onclick="openPage('pagibig')">
+<span class="icon">🏠</span>
+Pag-IBIG
+<small>Estimate contribution</small>
 </button>
 
-<button onclick="openPage('budget')">
-<span class="icon">📊</span>Budget Planner
+<button class="tool" onclick="openPage('budget')">
+<span class="icon">📊</span>
+Budget Planner
+<small>Plan your expenses</small>
 </button>
 
-<button onclick="openPage('savings')">
-<span class="icon">🎯</span>Savings Goal
+<button class="tool" onclick="openPage('savings')">
+<span class="icon">🎯</span>
+Savings Goal
+<small>Reach your money goals</small>
 </button>
 
 </div>
+
+<div class="footer">
+🇵🇭 Made for everyday Filipino money planning
+</div>
+
 </main>
+
 
 <main id="salary">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>💰 Salary Calculator</h2>
+<p>Estimate your monthly take-home pay.</p>
+</div>
 
 <label>Monthly Basic Salary</label>
 <input id="salaryInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="salaryCalc()">Calculate</button>
+<button class="calcbtn" onclick="salaryCalc()">Calculate Salary</button>
 
 <div id="salaryResult" class="result" style="display:none"></div>
 
 </main>
 
+
 <main id="bir">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>🧾 BIR Tax Calculator</h2>
+<p>Estimate your monthly BIR income tax.</p>
+</div>
 
 <label>Monthly Taxable Income</label>
 <input id="birInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="birCalc()">Calculate</button>
+<button class="calcbtn" onclick="birCalc()">Calculate Tax</button>
 
 <div id="birResult" class="result" style="display:none"></div>
 
 </main>
 
+
 <main id="sss">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>🏦 SSS Calculator</h2>
+<p>Estimate your employee SSS contribution.</p>
+</div>
 
 <label>Monthly Salary</label>
 <input id="sssInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="sssCalc()">Calculate</button>
+<button class="calcbtn" onclick="sssCalc()">Calculate SSS</button>
 
 <div id="sssResult" class="result" style="display:none"></div>
 
 </main>
 
+
 <main id="pagibig">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>🏠 Pag-IBIG Calculator</h2>
+<p>Estimate your employee contribution.</p>
+</div>
 
 <label>Monthly Salary</label>
 <input id="pagibigInput" type="number" placeholder="Example: 20000">
 
-<button class="calcbtn" onclick="pagibigCalc()">Calculate</button>
+<button class="calcbtn" onclick="pagibigCalc()">Calculate Pag-IBIG</button>
 
 <div id="pagibigResult" class="result" style="display:none"></div>
 
 </main>
 
+
 <main id="budget">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>📊 Budget Planner</h2>
+<p>See how much money you have left each month.</p>
+</div>
 
 <label>Monthly Income</label>
 <input id="budgetIncome" type="number" placeholder="Example: 20000">
@@ -161,29 +390,34 @@ input{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size
 
 </main>
 
+
 <main id="savings">
 
-<button class="back" onclick="home()">← Back</button>
+<button class="back" onclick="home()">← Back to Tools</button>
 
+<div class="page-title">
 <h2>🎯 Savings Goal</h2>
+<p>Find out how long it may take to reach your goal.</p>
+</div>
 
 <label>Goal Name</label>
-<input id="goalName" type="text" placeholder="Example: New Phone">
+<input id="goalName" type="text" placeholder="Example: iPhone">
 
 <label>Target Amount</label>
-<input id="target" type="number" placeholder="Example: 20000">
+<input id="target" type="number" placeholder="Example: 30000">
 
 <label>Current Savings</label>
-<input id="current" type="number" placeholder="Example: 5000">
+<input id="current" type="number" placeholder="Example: 100">
 
 <label>Monthly Savings</label>
-<input id="monthly" type="number" placeholder="Example: 2000">
+<input id="monthly" type="number" placeholder="Example: 1000">
 
 <button class="calcbtn" onclick="savingsCalc()">Calculate Goal</button>
 
 <div id="savingsResult" class="result" style="display:none"></div>
 
 </main>
+
 
 <script>
 
@@ -196,6 +430,7 @@ document.getElementById("pagibig").style.display="none";
 document.getElementById("budget").style.display="none";
 document.getElementById("savings").style.display="none";
 document.getElementById(page).style.display="block";
+window.scrollTo(0,0);
 }
 
 function home(){
@@ -206,6 +441,7 @@ document.getElementById("pagibig").style.display="none";
 document.getElementById("budget").style.display="none";
 document.getElementById("savings").style.display="none";
 document.getElementById("home").style.display="block";
+window.scrollTo(0,0);
 }
 
 function sssAmount(s){
@@ -217,7 +453,10 @@ function salaryCalc(){
 
 let s=Number(document.getElementById("salaryInput").value);
 
-if(s<=0){alert("Enter your salary.");return}
+if(s<=0){
+alert("Enter your salary.");
+return;
+}
 
 let a=sssAmount(s);
 let p=s*.025;
@@ -244,14 +483,18 @@ document.getElementById("salaryResult").innerHTML=
 "Pag-IBIG: ₱"+pg.toFixed(2)+"<br>"+
 "BIR Tax: ₱"+tax.toFixed(2)+"<br><br>"+
 "<b>Total Deductions: ₱"+total.toFixed(2)+"</b><br><br>"+
-"<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>";
+"<b>Estimated Take-home Pay: ₱"+net.toFixed(2)+"</b>"+
+"<div class='tip'>💡 Estimated amount only.</div>";
 }
 
 function birCalc(){
 
 let income=Number(document.getElementById("birInput").value);
 
-if(income<=0){alert("Enter your income.");return}
+if(income<=0){
+alert("Enter your income.");
+return;
+}
 
 let tax=0;
 
@@ -267,14 +510,18 @@ document.getElementById("birResult").style.display="block";
 document.getElementById("birResult").innerHTML=
 "<b>Estimated Monthly BIR Tax</b><br><br>"+
 "Taxable Income: ₱"+income.toFixed(2)+"<br><br>"+
-"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>";
+"<b>Estimated Tax: ₱"+tax.toFixed(2)+"</b>"+
+"<div class='tip'>💡 Estimated amount only.</div>";
 }
 
 function sssCalc(){
 
 let s=Number(document.getElementById("sssInput").value);
 
-if(s<=0){alert("Enter your salary.");return}
+if(s<=0){
+alert("Enter your salary.");
+return;
+}
 
 let m=Math.max(5000,Math.min(35000,Math.ceil(s/500)*500));
 let employee=m*.05;
@@ -285,15 +532,18 @@ document.getElementById("sssResult").innerHTML=
 "<b>Estimated SSS Contribution</b><br><br>"+
 "Monthly Salary: ₱"+s.toFixed(2)+"<br>"+
 "Monthly Salary Credit: ₱"+m.toFixed(2)+"<br><br>"+
-"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
-"Note: Estimated amount only.";
+"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
+"<div class='tip'>💡 Estimated amount only.</div>";
 }
 
 function pagibigCalc(){
 
 let s=Number(document.getElementById("pagibigInput").value);
 
-if(s<=0){alert("Enter your salary.");return}
+if(s<=0){
+alert("Enter your salary.");
+return;
+}
 
 let employee;
 
@@ -312,8 +562,8 @@ document.getElementById("pagibigResult").style.display="block";
 document.getElementById("pagibigResult").innerHTML=
 "<b>Estimated Pag-IBIG Contribution</b><br><br>"+
 "Monthly Salary: ₱"+s.toFixed(2)+"<br><br>"+
-"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b><br><br>"+
-"Note: Estimated amount only.";
+"<b>Employee Contribution: ₱"+employee.toFixed(2)+"</b>"+
+"<div class='tip'>💡 Estimated amount only.</div>";
 }
 
 function budgetCalc(){
@@ -336,7 +586,6 @@ let debt=Number(document.getElementById("debt").value)||0;
 let other=Number(document.getElementById("other").value)||0;
 
 let total=rent+food+electricity+water+internet+transport+family+debt+other;
-
 let remaining=income-total;
 
 document.getElementById("budgetResult").style.display="block";
@@ -345,15 +594,15 @@ document.getElementById("budgetResult").innerHTML=
 "<b>📊 Budget Summary</b><br><br>"+
 "Monthly Income: ₱"+income.toFixed(2)+"<br>"+
 "Total Expenses: ₱"+total.toFixed(2)+"<br><br>"+
-"<b>Remaining Money: ₱"+remaining.toFixed(2)+"</b><br><br>"+
-"💡 Tip: Consider saving part of your remaining money.";
+"<b>Remaining Money: ₱"+remaining.toFixed(2)+"</b>"+
+"<div class='tip'>💡 Consider saving part of your remaining money.</div>";
 }
 
 function savingsCalc(){
 
-let goal=document.getElementById("goalName").value;
+let goal=document.getElementById("goalName").value||"My Savings Goal";
 let target=Number(document.getElementById("target").value);
-let current=Number(document.getElementById("current").value);
+let current=Number(document.getElementById("current").value)||0;
 let monthly=Number(document.getElementById("monthly").value);
 
 if(target<=0){
@@ -401,7 +650,8 @@ document.getElementById("savingsResult").innerHTML=
 "Amount Remaining: ₱"+remaining.toFixed(2)+"<br>"+
 "Monthly Savings: ₱"+monthly.toFixed(2)+"<br><br>"+
 "<b>Estimated Time: "+months+" month(s)</b><br>"+
-"Approximately: "+years+" year(s) and "+monthLeft+" month(s)";
+"Approximately: "+years+" year(s) and "+monthLeft+" month(s)"+
+"<div class='tip'>💡 Stay consistent with your monthly savings.</div>";
 }
 
 </script>
